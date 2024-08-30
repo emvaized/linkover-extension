@@ -18,7 +18,7 @@ function setPageListeners() {
     ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
         .forEach(event => document.addEventListener(event, e => {
         if (lastHoveredLink) {
-            if (configs.changeColorForProccessedLinks) lastHoveredLink.classList.remove('link-tooltip-processing');
+            if (configs.changeColorForProccessedLinks) unhighlightProccessedLink(lastHoveredLink);
             lastHoveredLink = false;
             clearTimeout(timeoutToShowPopup);
         }
@@ -37,9 +37,10 @@ function setPageListeners() {
             const el = e.target;
     
             if (el.tagName == 'A' || el.parentNode.tagName == 'A') {
-                // if (hoveredLink) return;
                 lastMouseMoveDx = e.clientX;
                 if (el == lastHoveredLink) return;
+                if (configs.changeColorForProccessedLinks && lastHoveredLink) 
+                    unhighlightProccessedLink(lastHoveredLink);
                 lastHoveredLink = el;
                  
                 /// check when 'show only if three dots' enabled
@@ -62,7 +63,7 @@ function setPageListeners() {
                
                  /// add color for proccessed links
                  if (configs.changeColorForProccessedLinks)
-                 el.classList.add('link-tooltip-processing');
+                    highlightProccessedLink(el)
 
                 timeoutToShowPopup = setTimeout(function () {
                     if (!lastHoveredLink) return;
@@ -128,9 +129,8 @@ function setPageListeners() {
                 }
 
                 if (lastHoveredLink){
-                    if (configs.changeColorForProccessedLinks) {
-                        lastHoveredLink.classList.remove('link-tooltip-processing');
-                    }
+                    if (configs.changeColorForProccessedLinks)
+                        unhighlightProccessedLink(lastHoveredLink)
                     lastHoveredLink = false;
                 }
     
@@ -296,4 +296,12 @@ function setLoadingCursor(el){
 function disableLoadingCursor(el){
     clearTimeout(timeoutToAddLoadingCursor);
     el.classList.remove('loading-cursor');
+}
+
+function highlightProccessedLink(el){
+    el.classList.add('link-tooltip-processing');
+}
+
+function unhighlightProccessedLink(el){
+    el.classList.remove('link-tooltip-processing');
 }
