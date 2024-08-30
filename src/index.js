@@ -261,7 +261,7 @@ function showTooltip(linkEl, data, dx) {
     const tooltipRect = tooltip.getBoundingClientRect();
     if (tooltipRect.left < 0) {
         tooltip.style.left = `${dx + (-1 * tooltipRect.left) + 5}px`;
-        arrow.style.transform = dyOverflowed ? `rotate(180deg) translate(${12.5 - tooltipRect.left}px, -1px)` : `translate(${-12.5 + tooltipRect.left}px, -1px)`;
+        arrow.style.marginLeft = `${tooltipRect.left}px`;
     }
 
     setTimeout(function () {
