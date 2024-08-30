@@ -18,7 +18,7 @@ input[type="text"]{
     margin-right: 4px;
 }
 
-hr { width: 100%; opacity: 0.2; }
+hr { width: 100%; opacity: 0.1; }
 
 .disabled-option {
     opacity: 0.5;
@@ -28,4 +28,8 @@ hr { width: 100%; opacity: 0.2; }
 
 input[type="number"]{
     max-width: 65px;
+}
+
+h3, h5{
+    margin: 12px 0;
 }
