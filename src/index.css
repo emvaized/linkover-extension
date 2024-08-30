@@ -56,10 +56,10 @@
 }
 
 .link-tooltip .tooltip-header {
-    vertical-align: middle;
     padding: 4px !important;
     margin: 0px !important;
     line-height: normal !important;
+    overflow: auto !important;
 }
 
 .link-tooltip .url {
