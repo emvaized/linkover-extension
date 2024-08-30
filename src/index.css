@@ -231,4 +231,5 @@
     margin-right: 8px !important;
     min-width: 120px;
     border: none;
+    object-fit: cover !important;
 }
