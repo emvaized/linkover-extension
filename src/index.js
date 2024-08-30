@@ -231,7 +231,7 @@ function showTooltip(linkEl, data, dx) {
 
     /// calculate position
     const linkRect = linkEl.getBoundingClientRect();
-    tooltip.style.top = `${linkRect.top - 7.5}px`;
+    tooltip.style.top = `${linkRect.top - 8.5}px`;
     tooltip.style.left = dx ? `${dx}px` : `${linkRect.left + (linkRect.width / 2)}px`;
 
     /// add tooltip arrow
@@ -246,7 +246,7 @@ function showTooltip(linkEl, data, dx) {
     /// check if tooltip will go off-screen on top – if yes, move below link
     let dyOverflowed = linkRect.top - 7.5 - tooltip.clientHeight < 0;
     if (dyOverflowed) {
-        tooltip.style.top = `${linkRect.top + linkRect.height + 10}px`;
+        tooltip.style.top = `${linkRect.top + linkRect.height + 11}px`;
         tooltip.classList.remove('initial-tooltip');
         tooltip.classList.add('initial-tooltip-bottom');
 
