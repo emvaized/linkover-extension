@@ -1,0 +1,27 @@
+{
+    "name": "link-previewer",
+    "description": "Show general info about link on hover",
+    "version": "0.0.1",
+    "homepage": "http://chrome.google.com/webstore",
+    "author": "emvaized",
+    "repository": {
+        "type": "git",
+        "url": "ENTER GIT REPO URL"
+    },
+    "devDependencies": {
+        "@mcler/webpack-concat-plugin": "^4.1.6",
+        "css-minimizer-webpack-plugin": "^7.0.0",
+        "json-minimizer-webpack-plugin": "^5.0.0",
+        "terser-webpack-plugin": "^5.3.10",
+        "webpack": "^5.93.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-concat-files-plugin": "^0.5.2"
+    },
+    "dependencies": {
+        "copy-webpack-plugin": "^12.0.2",
+        "link-preview-js": "^2.1.13"
+    },
+    "scripts": {
+        "build": "webpack --config webpack.config.js"
+    }
+}

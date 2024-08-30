@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css" />
+</head>
+
+<body>
+    <h2>Settings</h2>
+    <h4>Activation rules</h4>
+    <div class='option'>
+        <label><input type="text" id="whitelistDomains" placeholder="Comma separated"></input></label>
+    </div>
+    
+    <div class='option'>
+        <label><input type="text" id="excludedDomains" placeholder="Comma separated"></input></label>
+    </div>
+    
+    <div class='option'>
+        <label><input type="checkbox" id="showOnlyWithModifierKey"></input></label>
+    </div>
+    
+    <div class='option'>
+        <label><input type="checkbox" id="showOnlyWhenThreeDots"></input></label>
+    </div>
+    
+    <h4>Appearance</h4>
+    <div class='option'>
+        <label><input type="checkbox" id="showDescription"></input></label>
+    </div>
+    
+     <div class='option'>
+        <label><input type="checkbox" id="showThumbnail"></input></label>
+    </div>
+    
+    <h4>Behavior</h4>
+    <div class='option'>
+        <label><input type="number" min="0" step="50" id="hoverDelay"></input></label>
+    </div> 
+
+    <div class='option'>
+        <label><input type="number" min="0" step="50" id="mouseMoveDebounceTimeout"></input></label>
+    </div>
+    
+      <div class='option'>
+        <label><input type="number" min="0" step="0.1" id="maxCursorSpeed"></input></label>
+    </div> 
+    
+    <div class='option'>
+        <label><input type="checkbox" id="changeCursorToLoading"></input></label>
+    </div>  
+
+
+    <script src="../configs.js"></script>
+    <script src="options.js"></script>
+</body>
+
+</html>

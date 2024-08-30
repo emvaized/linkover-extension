@@ -1,0 +1,207 @@
+.link-tooltip {
+    position: fixed !important;
+    background-color: white !important;
+    color: black !important;
+    z-index: 999999999999 !important;
+    outline: 1px solid lightgray;
+    max-width: 300px !important;
+    border-radius: 4px !important;
+    pointer-events: none !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2) !important;
+    padding: 4px !important;
+}
+
+.dark-tooltip {
+    background-color: #2b2a33 !important;
+    color: white !important;
+    border: 1px solid gray;
+}
+
+.dark-tooltip .tooltip-arrow::after {
+    background-color: #2b2a33 !important;
+    border-bottom: 0.25px solid gray;
+    border-right: 0.25px solid gray;
+}
+
+.dark-tooltip .top-thumbnail {
+    border-bottom: 1px solid gray !important;
+}
+
+.dark-tooltip .bottom-thumbnail {
+    border-top: 1px solid gray !important;
+}
+
+.dark-tooltip .domain {
+    color: #54a2dd !important;
+}
+
+.dark-tooltip .sub-url {
+    color: white !important;
+}
+
+.initial-tooltip {
+    transform: translate(-50%, -70%);
+}
+
+.initial-tooltip-bottom {
+    transform: translate(-50%, -25%);
+}
+
+.revealed-tooltip {
+    transform: translate(-50%, -100%);
+}
+
+.revealed-tooltip-bottom {
+    transform: translate(-50%, 0%);
+}
+
+.link-tooltip .tooltip-header {
+    vertical-align: middle;
+    padding: 4px !important;
+    margin: 0px !important;
+    line-height: normal !important;
+}
+
+.link-tooltip .url {
+    display: inline;
+    margin: 4px 0px !important;
+    margin-top: 0px !important;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    max-width: 90% !important;
+    float: left;
+    clear: none !important;
+    font-size: 13px !important;
+    line-height: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.link-tooltip .url .domain {
+    color: #2889d4;
+}
+
+.link-tooltip .url .sub-url {
+    color: black;
+    opacity: 0.5 !important;
+}
+
+.link-tooltip .title {
+    all: revert;
+    font-size: 18px !important;
+    margin: 3px 0px 4px !important;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    line-height: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.link-tooltip .page-favicon {
+    height: 16px;
+    width: 16px;
+    display: inline;
+    margin-right: 4px !important;
+    float: left;
+    margin-top: -1px !important;
+    margin-bottom: 4px !important;
+}
+
+.link-tooltip .description {
+    opacity: 0.5 !important;
+    font-size: 12px !important;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    margin: 0px 0px 7px !important;
+    line-height: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    width: 100% !important;
+    margin-top: 25px !important;
+}
+
+.link-tooltip .thumbnail {
+    all: revert;
+    width: 100% !important;
+    object-fit: contain !important;
+    max-width: 300px !important;
+    max-height: 150px !important;
+    min-height: 140px !important;
+    overflow: hidden !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.link-tooltip .stretched-thumbnail {
+    object-fit: cover !important;
+}
+
+.link-tooltip .top-thumbnail {
+    border-bottom: 1px solid lightgray;
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+}
+
+.link-tooltip .bottom-thumbnail {
+    border-top: 1px solid lightgray;
+    vertical-align: bottom !important;
+    border-bottom-left-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    margin-top: 3px !important;
+}
+
+.link-tooltip img {
+    filter: none !important;
+}
+
+.limited-lines-text {
+    overflow: hidden;
+    white-space: unset;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+}
+
+.loading-cursor {
+    cursor: progress !important;
+}
+
+.link-tooltip-processing {
+    background-color: #2889d4 !important;
+}
+
+.tooltip-arrow {
+    all: revert;
+    z-index: 9999999999999 !important;
+    height: 15px !important;
+    width: 25px !important;
+    overflow: hidden;
+    position: absolute;
+    background: none !important;
+    box-shadow: none !important;
+    left: 50% !important;
+    top: 100%;
+    transform: translate(-12.5px, -1px);
+}
+
+.arrow-on-top {
+    top: 100%;
+    transform: translate(-12.5px, -1px);
+}
+
+.arrow-on-bottom {
+    top: unset;
+    bottom: 100%;
+    transform: rotate(180deg) translate(12.5px, -1px);
+}
+
+.tooltip-arrow::after {
+    content: "";
+    position: absolute;
+    z-index: 99999999999999 !important;
+    left: 25% !important;
+    bottom: 50% !important;
+    width: 15px !important;
+    height: 15px !important;
+    transform: rotate(45deg);
+    border-bottom: 0.25px solid lightgray;
+    border-right: 0.25px solid lightgray;
+    background: white !important;
+}

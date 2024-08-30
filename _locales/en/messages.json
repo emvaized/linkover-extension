@@ -1,0 +1,14 @@
+{
+    "changeCursorToLoading": { "message": "Change cursor to loading" },
+    "appName": { "message": "Link Tooltip" },
+    "appDescription": { "message": "Fetches info about the link on hover" },
+    "showOnlyWithModifierKey": { "message": "Show only when modifier key is held (Ctrl,Shift,Alt etc)" },
+    "excludedDomains": { "message": "Blacklist domains" },
+    "whitelistDomains": { "message": "Whitelist domains" },
+    "mouseMoveDebounceTimeout": { "message": "How often to check element under cursor (ms)" },
+    "hoverDelay": { "message": "Hover delay (ms)" },
+    "showDescription": { "message": "Show description for link" },
+    "showThumbnail": { "message": "Show thumbnail for link" },
+    "showOnlyWhenThreeDots": { "message": "Show only if text contains three dots (...)" },
+    "maxCursorSpeed": { "message": "Max cursor speed allowed to trigger" }
+}
