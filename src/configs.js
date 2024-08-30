@@ -8,7 +8,6 @@ const configs = {
     'showOnlyForEmbeddedLinks': false,
     'changeColorForProccessedLinks': false,
     'showOnlyUrlWhenNoData': true,
-    'adaptToBrowserDarkMode': true,
     'showOnlyWithModifierKey': true,
     'excludedDomains': '',
     'mouseMoveDebounceTimeout': 25,

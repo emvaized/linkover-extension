@@ -145,11 +145,6 @@ function showTooltip(linkEl, data, dx) {
     const tooltip = document.createElement('div');
     tooltip.className = 'link-tooltip initial-tooltip';
 
-    /// detect dark mode on page
-    if (configs.adaptToBrowserDarkMode && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        tooltip.classList.add('dark-tooltip');
-    }
-
     /// show tooltip on side
     if (configs.thumbnailOnSide) {
         tooltip.classList.add('thumbnail-on-side');
