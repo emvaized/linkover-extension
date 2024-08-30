@@ -1,4 +1,4 @@
-# Link Preview
+# Link Tooltip
 
 Fetch info about any link on hover! 
 This extension is able to fetch tab title, favicon, short description and thumbnails for many links you see over the internet. It uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
