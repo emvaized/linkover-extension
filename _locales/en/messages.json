@@ -1,6 +1,6 @@
 {
     "changeCursorToLoading": { "message": "Change cursor to loading" },
-    "appName": { "message": "Link Tooltip" },
+    "appName": { "message": "Linkover – Tooltip Link Info on hover" },
     "appDescription": { "message": "Fetches info about the link on hover" },
     "showOnlyWithModifierKey": { "message": "Show only when modifier key is held (Ctrl,Shift,Alt etc)" },
     "excludedDomains": { "message": "Blacklist domains" },
