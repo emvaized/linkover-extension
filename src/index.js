@@ -9,9 +9,9 @@ loadUserConfigs(function(cfg){
     configs.excludedDomains.split(',').forEach((domain) => {
         if (window.location.href.includes(domain.trim().toLowerCase())) return;
     });
-
     setPageListeners();  
 })
+chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
