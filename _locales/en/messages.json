@@ -11,5 +11,6 @@
     "showThumbnail": { "message": "Show thumbnail for link" },
     "showOnlyWhenThreeDots": { "message": "Show only if text contains three dots (...)" },
     "maxCursorSpeed": { "message": "Max cursor speed allowed to trigger" },
-    "thumbnailOnSide": { "message": "Show thumbnail on side" }
+    "thumbnailOnSide": { "message": "Show thumbnail on side" },
+    "changeColorForProccessedLinks": { "message": "Highlight links which are being loaded" }
 }

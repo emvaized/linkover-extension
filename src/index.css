@@ -163,8 +163,23 @@
     cursor: progress !important;
 }
 
-.link-tooltip-processing {
+/* .link-tooltip-processing {
     background-color: #2889d4 !important;
+} */
+.link-tooltip-processing {
+    position: relative;
+}
+.link-tooltip-processing:before {
+    content: " ";
+    z-index: 98989898989;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(123, 123, 123, 0.25);
+    border-radius: 4px;
 }
 
 .tooltip-arrow {

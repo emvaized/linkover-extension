@@ -18,6 +18,7 @@ function setPageListeners() {
     ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
         .forEach(event => document.addEventListener(event, e => {
         if (lastHoveredLink) {
+            if (configs.changeColorForProccessedLinks) lastHoveredLink.classList.remove('link-tooltip-processing');
             lastHoveredLink = false;
             clearTimeout(timeoutToShowPopup);
         }
@@ -119,16 +120,20 @@ function setPageListeners() {
                     }
                 }, configs.hoverDelay);
             } else {
-                if (lastHoveredLink && configs.debugMode) console.log('leaved link');
-                if (configs.changeColorForProccessedLinks && lastHoveredLink)
-                    lastHoveredLink.classList.remove('link-tooltip-processing');
-    
+                if (configs.debugMode && lastHoveredLink) console.log('leaved link');
+                
                 if (tooltipShown) {
                     tooltipShown = false;
                     hideTooltip();
                 }
+
+                if (lastHoveredLink){
+                    if (configs.changeColorForProccessedLinks) {
+                        lastHoveredLink.classList.remove('link-tooltip-processing');
+                    }
+                    lastHoveredLink = false;
+                }
     
-                lastHoveredLink = false;
                 clearTimeout(timeoutToShowPopup);
                 if (configs.changeCursorToLoading) disableLoadingCursor(el)
             }
