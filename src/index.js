@@ -125,7 +125,7 @@ function setPageListeners() {
                 
                 if (tooltipShown) {
                     tooltipShown = false;
-                    hideTooltip();
+                    hideTooltip();  
                 }
 
                 if (lastHoveredLink){
