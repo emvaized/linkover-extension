@@ -15,7 +15,8 @@ const configs = {
     'showDescription': true,
     'showThumbnail': true,
     'showOnlyWhenThreeDots': false,
-    'whitelistDomains': ''
+    'whitelistDomains': '',
+    'thumbnailOnSide': false
 };
 
 function loadUserConfigs(callback) {

@@ -205,3 +205,15 @@
     border-right: 0.25px solid lightgray;
     background: white !important;
 }
+
+.link-tooltip.thumbnail-on-side {
+    display: flex;
+    max-width: 400px !important;
+}
+
+.link-tooltip.thumbnail-on-side .thumbnail {
+    border-radius: 4px !important;
+    margin-right: 8px !important;
+    min-width: 120px;
+    border: none;
+}

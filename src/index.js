@@ -145,6 +145,11 @@ function showTooltip(linkEl, data, dx) {
         tooltip.classList.add('dark-tooltip');
     }
 
+    /// show tooltip on side
+    if (configs.thumbnailOnSide) {
+        tooltip.classList.add('thumbnail-on-side');
+    }
+
     /// thumbnail
     let thumbnail;
     if (configs.showThumbnail && data.images && data.images[0]) {
@@ -243,7 +248,7 @@ function showTooltip(linkEl, data, dx) {
         arrow.classList.remove('arrow-on-top');
         arrow.classList.add('arrow-on-bottom');
 
-        if (thumbnail) {
+        if (thumbnail && !configs.thumbnailOnSide) {
             const newThumbnail = thumbnail.cloneNode();
             thumbnail.remove();
             newThumbnail.classList.remove('top-thumbnail');
@@ -268,7 +273,6 @@ function showTooltip(linkEl, data, dx) {
 }
 
 function hideTooltip() {
-    return;
     document.querySelectorAll('.link-tooltip').forEach(function (tooltip) {
         tooltip.style.opacity = 0;
 

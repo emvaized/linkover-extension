@@ -50,8 +50,5 @@ function init(){
 
 function updateDisabledOptions() {
     /// Grey out unavailable optoins
-    document.getElementById("popupSearchUrl").parentNode.className = document.getElementById("searchInPopupEnabled").checked ? 'enabled-option' : 'disabled-option';
-    document.getElementById("tryFitWindowSizeToImage").parentNode.className = document.getElementById("useBuiltInImageViewer").checked ? 'enabled-option' : 'disabled-option';
-    document.getElementById("tryFitWindowSizeToImage").parentNode.className = document.getElementById("viewInPopupEnabled").checked ? 'enabled-option' : 'disabled-option'; 
-    document.getElementById("useBuiltInImageViewer").parentNode.className = document.getElementById("viewInPopupEnabled").checked ? 'enabled-option' : 'disabled-option';
+    document.getElementById("thumbnailOnSide").parentNode.className = document.getElementById("showThumbnail").checked ? 'enabled-option' : 'disabled-option';
 }
