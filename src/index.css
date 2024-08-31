@@ -99,13 +99,13 @@
     font-size: 12px !important;
     -webkit-line-clamp: 4;
     line-clamp: 4;
-    margin: 0px 0px 7px !important;
+    /* margin: 0px 0px 7px !important; */
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
     width: 100% !important;
-    /* margin-top: 25px !important; */
     margin: 0 !important;
-    padding-top: 4px !important;
+    /* padding-top: 4px !important; */
+    padding-top: 2px !important;
 }
 
 /* Thumbnail */
@@ -256,14 +256,22 @@
 
 
 /* Different tooltip appearances (not used yet) */
+/* Gradient */
 .link-tooltip.add-gradient {
-    background: linear-gradient(to bottom, rgb(256,256,256), rgb(230,230,230));
+    background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
+    /* box-shadow:  12px 12px 24px #b0b0b0,
+        -12px -12px 24px #ffffff !important;  */
+    /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3) !important; */
+    
 }
 .link-tooltip.add-gradient .tooltip-arrow{
-    background: rgb(230,230,230) !important;
+    background: #efefef !important;
     /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important; */
 }
-
+.link-tooltip.add-gradient .tooltip-arrow.arrow-on-bottom{
+    background: #f7f7f7 !important;
+}
+/* Background blur */
 .link-tooltip.add-blur {
     background-color: rgba(256,256,256,0.65) !important;
     backdrop-filter: blur(20px) !important;

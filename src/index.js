@@ -139,21 +139,23 @@ function showTooltip(linkEl, data, dx) {
 
     /// thumbnail
     let thumbnail;
-    if (configs.showThumbnail && (data.images || data.contentType.includes('image/'))) {
-        thumbnail = document.createElement('img');
-        thumbnail.className = 'thumbnail top-thumbnail';
-        thumbnail.height = '150px';
-        thumbnail.src = data.images ? data.images[0] : data.url;
-        tooltip.appendChild(thumbnail);
-
-        thumbnail.addEventListener('load', function (ev) {
-            if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
-                thumbnail.classList.add('stretched-thumbnail');
-        });
-
-        thumbnail.addEventListener('error', function () {
-            thumbnail.remove();
-        });
+    if (configs.showThumbnail) {
+        if (data.images || (data.contentType && data.contentType.includes('image/'))){
+            thumbnail = document.createElement('img');
+            thumbnail.className = 'thumbnail top-thumbnail';
+            thumbnail.height = '150px';
+            thumbnail.src = data.images ? data.images[0] : data.url;
+            tooltip.appendChild(thumbnail);
+    
+            thumbnail.addEventListener('load', function (ev) {
+                if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
+                    thumbnail.classList.add('stretched-thumbnail');
+            });
+    
+            thumbnail.addEventListener('error', function () {
+                thumbnail.remove();
+            });
+        }
     }
 
     /// title
