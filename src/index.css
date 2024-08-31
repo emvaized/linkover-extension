@@ -155,6 +155,7 @@
     object-fit: cover !important;
     min-height: unset !important;
     border: 1px solid lightgray !important;
+    padding: 0 !important;
 }
 
 .link-tooltip img {
