@@ -115,7 +115,7 @@
     object-fit: contain !important;
     max-width: 300px !important;
     max-height: 150px !important;
-    min-height: 140px !important;
+    min-height: 150px !important;
     overflow: hidden !important;
     padding: 0px !important;
     margin: 0px !important;
@@ -154,6 +154,7 @@
     border: none;
     object-fit: cover !important;
     min-height: unset !important;
+    border: 1px solid lightgray !important;
 }
 
 .link-tooltip img {
@@ -245,6 +246,10 @@
     
     .link-tooltip .sub-url {
         color: white !important;
+    }
+
+    .link-tooltip.thumbnail-on-side .thumbnail {
+        border: 1px solid darkgray !important;
     }
 }
 

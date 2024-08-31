@@ -6,7 +6,7 @@ const configs = {
     'changeCursorToLoading': true,
     'maxCursorSpeed': 1.0,
     'showOnlyForEmbeddedLinks': false,
-    'changeColorForProccessedLinks': false,
+    'changeColorForProccessedLinks': true,
     'showOnlyUrlWhenNoData': true,
     'showOnlyWithModifierKey': true,
     'excludedDomains': '',
