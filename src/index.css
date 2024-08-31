@@ -35,15 +35,36 @@
     overflow: auto !important;
 }
 
-.link-tooltip .url {
+/* Title */
+.link-tooltip .title {
+    all: revert;
+    font-size: 18px !important;
+    /* margin: 3px 0px 4px !important; */
+    margin: 0px 0px 4px !important;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    line-height: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* URL line */
+.link-tooltip .page-favicon {
+    height: 14px;
+    width: 14px;
     display: inline;
+    margin-right: 4px !important;
+    float: left;
+}
+
+.link-tooltip .url {
+    display: block;
     margin: 4px 0px !important;
     margin-top: 0px !important;
     -webkit-line-clamp: 1;
     line-clamp: 1;
-    max-width: 90% !important;
-    float: left;
-    clear: none !important;
+    /* max-width: 90% !important; */
+    /* float: left; */
+    /* clear: none !important; */
     font-size: 13px !important;
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
@@ -58,26 +79,7 @@
     opacity: 0.5 !important;
 }
 
-.link-tooltip .title {
-    all: revert;
-    font-size: 18px !important;
-    margin: 3px 0px 4px !important;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    line-height: normal !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-}
-
-.link-tooltip .page-favicon {
-    height: 16px;
-    width: 16px;
-    display: inline;
-    margin-right: 4px !important;
-    float: left;
-    margin-top: -1px !important;
-    margin-bottom: 4px !important;
-}
-
+/* Description */
 .link-tooltip .description {
     opacity: 0.5 !important;
     font-size: 12px !important;
@@ -87,9 +89,12 @@
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
     width: 100% !important;
-    margin-top: 25px !important;
+    /* margin-top: 25px !important; */
+    margin: 0 !important;
+    padding-top: 4px !important;
 }
 
+/* Thumbnail */
 .link-tooltip .thumbnail {
     all: revert;
     width: 100% !important;
@@ -120,6 +125,21 @@
     margin-top: 3px !important;
 }
 
+.link-tooltip.thumbnail-on-side {
+    display: flex;
+    max-width: 400px !important;
+}
+
+.link-tooltip.thumbnail-on-side .thumbnail {
+    border-radius: 4px !important;
+    margin-right: 8px !important;
+    min-width: 120px;
+    border: none;
+    object-fit: cover !important;
+    min-height: unset !important;
+    vertical-align: middle !important;
+}
+
 .link-tooltip img {
     filter: none !important;
 }
@@ -136,9 +156,7 @@
     cursor: progress !important;
 }
 
-/* .link-tooltip-processing {
-    background-color: #2889d4 !important;
-} */
+/* Highlight processing link */
 .link-tooltip-processing {
     position: relative;
 }
@@ -152,9 +170,11 @@
     left: 0;
     right: 0;
     background: rgba(123, 123, 123, 0.25);
-    border-radius: 3px;
+    outline: 1px solid rgba(123, 123, 123, 0.5);
+    border-radius: 2px;
 }
 
+/* Popup arrow */
 .tooltip-arrow {
     content: "";
     position: absolute;
@@ -177,22 +197,6 @@
 .arrow-on-bottom {
     bottom: calc(100% - 8px) !important;
     transform: rotate(-135deg);
-}
-
-.link-tooltip.thumbnail-on-side {
-    display: flex;
-    max-width: 400px !important;
-}
-
-.link-tooltip.thumbnail-on-side .thumbnail {
-    border-radius: 4px !important;
-    margin-right: 8px !important;
-    min-width: 120px;
-    border: none;
-    object-fit: cover !important;
-
-    min-height: unset !important;
-    vertical-align: middle !important;
 }
 
 
@@ -228,7 +232,7 @@
 }
 
 
-/* Different tooltip appearances */
+/* Different tooltip appearances (not used yet) */
 .link-tooltip.add-gradient {
     background: linear-gradient(rgba(256,256,256,1), rgba(0,0,0,0.05));
 }

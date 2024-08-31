@@ -36,7 +36,7 @@ function setPageListeners() {
             if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
             const el = e.target;
     
-            if (el.tagName == 'A' || el.parentNode.tagName == 'A') {
+            if (el.tagName == 'A' || (el.parentNode && el.parentNode.tagName == 'A')) {
                 lastMouseMoveDx = e.clientX;
                 if (el == lastHoveredLink) return;
                 if (configs.changeColorForProccessedLinks && lastHoveredLink) 
