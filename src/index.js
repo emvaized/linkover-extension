@@ -17,15 +17,15 @@ chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
 function setPageListeners() {
     /// prevent unwanted tooltip appear
     ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
-        .forEach(event => document.addEventListener(event, function(){
-            clearTimeout(timeoutDebounceWindowListeners);
-            timeoutDebounceWindowListeners = setTimeout(function(){
+        .forEach(e => document.addEventListener(e, function(){
+            window.clearTimeout(timeoutDebounceWindowListeners);
+            timeoutDebounceWindowListeners = window.setTimeout(function(){
                 onHideTooltip();
             }, 30)
         }));
 
     /// set listener on mouse move
-    let prevHoveredEl; /// cache previously hovered element
+    // let prevHoveredEl; /// cache previously hovered element
     // document.addEventListener('mousemove', function (e) {
     document.addEventListener('mouseover', function (e) {
         window.clearTimeout(timeoutDebounceMousemove); 
@@ -123,6 +123,7 @@ function setPageListeners() {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
                 onHideTooltip(el);
             }
+        // }, configs.mouseMoveDebounceTimeout)
         }, 100)
     }, false);
 }
