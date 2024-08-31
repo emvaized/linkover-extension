@@ -45,33 +45,38 @@
     font-size: 18px !important;
     /* margin: 3px 0px 4px !important; */
     margin: 0px 0px 4px !important;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
 /* URL line */
 .link-tooltip .page-favicon {
-    height: 14px;
-    width: 14px;
-    display: inline;
+    all: revert;
+    height: 14px !important;
+    width: 14px !important;
+    display: inline !important;
     margin-right: 4px !important;
-    float: left;
+    float: left !important;
 }
 
 .link-tooltip .url {
-    display: block;
+    all: revert;
+    display: block !important;
     margin: 4px 0px !important;
     margin-top: 0px !important;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
+    -webkit-line-clamp: 1 !important;
+    line-clamp: 1 !important;
     /* max-width: 90% !important; */
     /* float: left; */
     /* clear: none !important; */
     font-size: 13px !important;
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 
 .link-tooltip .url .domain {
@@ -130,7 +135,7 @@
 }
 
 .link-tooltip.thumbnail-on-side {
-    display: flex;
+    display: flex !important;
     max-width: 400px !important;
 }
 
@@ -139,7 +144,7 @@
     margin-right: 8px !important;
     min-width: 120px;
     border: none;
-    object-fit: cover !important;
+    /* object-fit: cover !important; */
     min-height: unset !important;
     vertical-align: middle !important;
 }
@@ -192,14 +197,15 @@
     border-bottom: 0.5px solid lightgray;
     border-right: 0.5px solid lightgray;
     background: inherit !important;
+    border-radius: 0px 0px 2px 0 !important;
 }
 
 .arrow-on-top {
-    top: calc(100% - 8px) !important;
+    top: calc(100% - 7.5px) !important;
 }
 
 .arrow-on-bottom {
-    bottom: calc(100% - 8px) !important;
+    bottom: calc(100% - 7.5px) !important;
     transform: rotate(-135deg);
 }
 
@@ -209,21 +215,21 @@
     .link-tooltip {
         background-color: #2b2a33 !important;
         color: white !important;
-        border: 1px solid gray;
+        border: 1px solid darkgray;
     }
     
-    .link-tooltip .tooltip-arrow::after {
+    .link-tooltip .tooltip-arrow {
         background-color: #2b2a33 !important;
-        border-bottom: 0.25px solid gray;
-        border-right: 0.25px solid gray;
+        border-bottom: 0.5px solid darkgray;
+        border-right: 0.5px solid darkgray;
     }
     
     .link-tooltip .top-thumbnail {
-        border-bottom: 1px solid gray !important;
+        border-bottom: 1px solid darkgray !important;
     }
     
     .link-tooltip .bottom-thumbnail {
-        border-top: 1px solid gray !important;
+        border-top: 1px solid darkgray !important;
     }
     
     .link-tooltip .domain {
