@@ -8,7 +8,7 @@
     max-width: 300px !important;
     border-radius: 4px !important;
     pointer-events: none !important;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
     padding: 4px !important;
     opacity: 0 !important;
 }
@@ -129,6 +129,7 @@
     border-bottom: 1px solid lightgray;
     border-top-left-radius: 4px !important;
     border-top-right-radius: 4px !important;
+    padding-bottom: 4px !important;
 }
 
 .link-tooltip .bottom-thumbnail {
@@ -136,7 +137,8 @@
     vertical-align: bottom !important;
     border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important;
-    margin-top: 3px !important;
+    /* margin-top: 2px !important; */
+    padding-top: 4px !important;
 }
 
 .link-tooltip.thumbnail-on-side {
@@ -147,8 +149,8 @@
 .link-tooltip.thumbnail-on-side .thumbnail {
     border-radius: 4px !important;
     margin-right: 8px !important;
-    min-width: 120px;
-    max-width: 120px;
+    min-width: 120px !important;
+    max-width: 120px !important;
     border: none;
     /* object-fit: cover !important; */
     object-fit: contain !important;
@@ -198,21 +200,21 @@
     z-index: 99999999999999 !important;
     left: calc(50% - 8px) !important;
     bottom: 50% !important;
-    width: 15px !important;
-    height: 15px !important;
+    width: 14px !important;
+    height: 14px !important;
     transform: rotate(45deg);
-    border-bottom: 0.5px solid lightgray;
-    border-right: 0.5px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
     background: inherit !important;
     border-radius: 0px 0px 2px 0 !important;
 }
 
 .arrow-on-top {
-    top: calc(100% - 7.5px) !important;
+    top: calc(100% - 6.5px) !important;
 }
 
 .arrow-on-bottom {
-    bottom: calc(100% - 7.5px) !important;
+    bottom: calc(100% - 6.5px) !important;
     transform: rotate(-135deg);
 }
 
@@ -227,8 +229,8 @@
     
     .link-tooltip .tooltip-arrow {
         background-color: #2b2a33 !important;
-        border-bottom: 0.5px solid darkgray;
-        border-right: 0.5px solid darkgray;
+        border-bottom: 1px solid darkgray;
+        border-right: 1px solid darkgray;
     }
     
     .link-tooltip .top-thumbnail {
