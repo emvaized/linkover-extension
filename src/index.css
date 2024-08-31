@@ -10,6 +10,11 @@
     pointer-events: none !important;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2) !important;
     padding: 4px !important;
+    opacity: 0 !important;
+}
+
+.link-tooltip.opaque{
+    opacity: 1 !important;
 }
 
 .initial-tooltip {

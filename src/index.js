@@ -94,17 +94,12 @@ function setPageListeners() {
                                 if (configs.showOnlyUrlWhenNoData == false) return;
     
                                 /// When no result, show dummy tooltip only with favicon and url
-                                const dummyData = {
+                                response = {
                                     'url': hoveredUrl,
                                     'favicons': [
                                         faviconFetchUrl + hoveredUrl.split('/')[2]
                                     ]
                                 };
-    
-                                cachedData[hoveredUrl] = dummyData;
-                                showTooltip(el, dummyData, lastMouseMoveDx);
-                                tooltipShown = true;
-                                return;
                             }
     
                             if (configs.debugMode) {
@@ -250,7 +245,7 @@ function showTooltip(linkEl, data, dx) {
     }
 
     /// reveal tooltip
-    tooltip.style.opacity = 0;
+    tooltip.style.transition = `transform ${configs.transitionDuration}ms ease, opacity ${configs.transitionDuration}ms ease`;
     document.body.appendChild(tooltip);
 
     /// check if tooltip will go off-screen on top – if yes, move below link
@@ -282,8 +277,7 @@ function showTooltip(linkEl, data, dx) {
     }
    
     setTimeout(function () {
-        tooltip.style.transition = `transform ${configs.transitionDuration}ms ease, opacity ${configs.transitionDuration}ms ease`;
-        tooltip.style.opacity = 1;
+        tooltip.classList.add('opaque');
 
         if (showTooltipOverLink){
             tooltip.classList.add(dyOverflowed ? 'revealed-tooltip-bottom' : 'revealed-tooltip');
@@ -310,7 +304,7 @@ function onHideTooltip(el){
 
 function hideTooltip() {
     document.querySelectorAll('.link-tooltip').forEach(function (tooltip) {
-        tooltip.style.opacity = 0;
+        tooltip.classList.remove('opaque');
 
         setTimeout(function () {
             tooltip.remove();
