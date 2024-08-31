@@ -21,7 +21,7 @@ function setPageListeners() {
             window.clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = window.setTimeout(function(){
                 onHideTooltip();
-            }, 30)
+            }, configs.windowsEventsDebounceTimeout)
         }));
 
     /// set listener on mouse move
@@ -123,8 +123,7 @@ function setPageListeners() {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
                 onHideTooltip(el);
             }
-        // }, configs.mouseMoveDebounceTimeout)
-        }, 100)
+        }, configs.mouseMoveDebounceTimeout)
     }, false);
 }
 
