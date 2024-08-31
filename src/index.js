@@ -30,16 +30,18 @@ function setPageListeners() {
     }));
 
     /// set listener on mouse move
-    // document.addEventListener('mousemove', function (e) {
-    document.addEventListener('mouseover', function (e) {
+    let prevHoveredEl; /// cache previously hovered element
+    document.addEventListener('mousemove', function (e) {
         clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = setTimeout(function(){
             if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
             const el = e.target;
+            if (el == prevHoveredEl) return;
+            prevHoveredEl = el;
     
             if (el.tagName == 'A' || (el.parentNode && el.parentNode.tagName == 'A')) {
                 lastMouseMoveDx = e.clientX;
-                if (el == lastHoveredLink) return;
+                // if (el == lastHoveredLink) return;
                 if (configs.changeColorForProccessedLinks && lastHoveredLink) 
                     unhighlightProccessedLink(lastHoveredLink);
                 lastHoveredLink = el;
