@@ -17,6 +17,7 @@ const configs = {
     'showOnlyWhenThreeDots': false,
     'whitelistDomains': '',
     'thumbnailOnSide': false,
+    'keepShownOnMouseOut': false,
     'tooltipPosition': 'overLink' /// possible values: overLink, bottomLeft, bottomRight
 };
 

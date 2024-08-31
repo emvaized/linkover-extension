@@ -18,5 +18,6 @@
     "bottomLeft": { "message": "Bottom left" },
     "bottomRight": { "message": "Bottom right" },
     "topRight": { "message": "Top right" },
-    "topLeft": { "message": "Top left" }
+    "topLeft": { "message": "Top left" },
+    "keepShownOnMouseOut": { "message": "Keep tooltip shown on mouse out (for debug)" }
 }

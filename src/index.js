@@ -139,7 +139,7 @@ function setPageListeners() {
                 }, configs.hoverDelay);
             } else {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
-                onHideTooltip(el);
+                onHideTooltip(el, configs.keepShownOnMouseOut);
             }
         }, configs.mouseMoveDebounceTimeout)
     }, false);
@@ -315,8 +315,8 @@ function showTooltip(linkEl, data, dx) {
     return tooltip;
 }
 
-function onHideTooltip(el){
-    if (tooltipShown) {
+function onHideTooltip(el, keepShownOnMouseOut){
+    if (tooltipShown && !keepShownOnMouseOut) {
         tooltipShown = false;
         hideTooltip();  
     }
