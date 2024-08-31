@@ -11,6 +11,7 @@ const configs = {
     'showOnlyWithModifierKey': true,
     'excludedDomains': '',
     'mouseMoveDebounceTimeout': 20,
+    'windowsEventsDebounceTimeout': 30,
     'showDescription': true,
     'showThumbnail': true,
     'showOnlyWhenThreeDots': false,

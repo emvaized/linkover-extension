@@ -1,4 +1,4 @@
-let timeoutToShowPopup, timeoutToAddLoadingCursor, timeoutDebounceMousemove, timeoutDebounceWindowListeners;
+let timeoutToShowPopup, timeoutDebounceMousemove, timeoutDebounceWindowListeners;
 let tooltipShown = false, lastMouseMoveDx, lastHoveredLink;
 const cachedData = {};
 const faviconFetchUrl = 'https://s2.googleusercontent.com/s2/favicons?domain=';
@@ -21,22 +21,23 @@ function setPageListeners() {
             clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = setTimeout(function(){
                 onHideTooltip();
-            },25)
+            }, 30)
         }));
 
     /// set listener on mouse move
     let prevHoveredEl; /// cache previously hovered element
-    document.addEventListener('mousemove', function (e) {
-        clearTimeout(timeoutDebounceMousemove); 
-        timeoutDebounceMousemove = setTimeout(function(){
+    // document.addEventListener('mousemove', function (e) {
+    document.addEventListener('mouseover', function (e) {
+        window.clearTimeout(timeoutDebounceMousemove); 
+        timeoutDebounceMousemove = window.setTimeout(function(){
             if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
             const el = e.target;
-            if (el == prevHoveredEl) return;
-            prevHoveredEl = el;
+            // if (el == prevHoveredEl) return;
+            // prevHoveredEl = el;
     
             if (el.tagName == 'A' || (el.parentNode && el.parentNode.tagName == 'A')) {
                 lastMouseMoveDx = e.clientX;
-                // if (el == lastHoveredLink) return;
+                if (el == lastHoveredLink) return;
                 if (configs.changeColorForProccessedLinks && lastHoveredLink) 
                     unhighlightProccessedLink(lastHoveredLink);
                 lastHoveredLink = el;
@@ -122,7 +123,7 @@ function setPageListeners() {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
                 onHideTooltip(el);
             }
-        }, configs.mouseMoveDebounceTimeout)
+        }, 100)
     }, false);
 }
 
@@ -318,22 +319,21 @@ function hideTooltip() {
 }
 
 function setLoadingCursor(el){
-    timeoutToAddLoadingCursor = setTimeout(function () {
+    if (el && el.classList)
         el.classList.add('loading-cursor');
-    }, 0);
 }
 
 function disableLoadingCursor(el){
-    clearTimeout(timeoutToAddLoadingCursor);
-    if (el.classList)
+    if (el && el.classList)
         el.classList.remove('loading-cursor');
 }
 
 function highlightProccessedLink(el){
-    el.classList.add('link-tooltip-processing');
+    if (el && el.classList)
+        el.classList.add('link-tooltip-processing');
 }
 
 function unhighlightProccessedLink(el){
-    if (el.classList)
+    if (el && el.classList)
         el.classList.remove('link-tooltip-processing');
 }
