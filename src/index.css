@@ -13,19 +13,23 @@
 }
 
 .initial-tooltip {
-    transform: translate(-50%, -70%);
-}
-
-.initial-tooltip-bottom {
-    transform: translate(-50%, -25%);
+    /* transform: translate(-50%, -70%); */
+    transform: translate(-50%, -25%) scale(0);
 }
 
 .revealed-tooltip {
-    transform: translate(-50%, -100%);
+    /* transform: translate(-50%, -100%); */
+    transform: translate(-50%, -100%) scale(1);
+}
+
+.initial-tooltip-bottom {
+    /* transform: translate(-50%, -25%); */
+    transform: translate(-50%, -75%) scale(0);
 }
 
 .revealed-tooltip-bottom {
-    transform: translate(-50%, 0%);
+    /* transform: translate(-50%, 0%); */
+    transform: translate(-50%, 0%) scale(1);
 }
 
 .link-tooltip .tooltip-header {
@@ -188,7 +192,6 @@
     border-bottom: 0.5px solid lightgray;
     border-right: 0.5px solid lightgray;
     background: inherit !important;
-    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important; */
 }
 
 .arrow-on-top {
@@ -235,7 +238,11 @@
 
 /* Different tooltip appearances (not used yet) */
 .link-tooltip.add-gradient {
-    background: linear-gradient(rgba(256,256,256,1), rgba(0,0,0,0.05));
+    background: linear-gradient(to bottom, rgb(256,256,256), rgb(230,230,230));
+}
+.link-tooltip.add-gradient .tooltip-arrow{
+    background: rgb(230,230,230) !important;
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important; */
 }
 
 .link-tooltip.add-blur {
