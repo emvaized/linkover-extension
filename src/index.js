@@ -139,11 +139,11 @@ function showTooltip(linkEl, data, dx) {
 
     /// thumbnail
     let thumbnail;
-    if (configs.showThumbnail && data.images && data.images[0]) {
+    if (configs.showThumbnail && (data.images || data.contentType.includes('image/'))) {
         thumbnail = document.createElement('img');
         thumbnail.className = 'thumbnail top-thumbnail';
         thumbnail.height = '150px';
-        thumbnail.src = data.images[0];
+        thumbnail.src = data.images ? data.images[0] : data.url;
         tooltip.appendChild(thumbnail);
 
         thumbnail.addEventListener('load', function (ev) {

@@ -4,7 +4,7 @@
     color: black !important;
     z-index: 999999999999 !important;
     outline: 1px solid lightgray;
-    min-width: 300px !important;
+    /* min-width: 300px !important; */
     max-width: 300px !important;
     border-radius: 4px !important;
     pointer-events: none !important;
@@ -148,10 +148,12 @@
     border-radius: 4px !important;
     margin-right: 8px !important;
     min-width: 120px;
+    max-width: 120px;
     border: none;
     /* object-fit: cover !important; */
+    object-fit: contain !important;
     min-height: unset !important;
-    vertical-align: middle !important;
+    /* vertical-align: middle !important; */
 }
 
 .link-tooltip img {
