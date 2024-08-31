@@ -30,7 +30,8 @@ function setPageListeners() {
     }));
 
     /// set listener on mouse move
-    document.addEventListener('mousemove', function (e) {
+    // document.addEventListener('mousemove', function (e) {
+    document.addEventListener('mouseover', function (e) {
         clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = setTimeout(function(){
             if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
