@@ -10,12 +10,13 @@ const configs = {
     'showOnlyUrlWhenNoData': true,
     'showOnlyWithModifierKey': true,
     'excludedDomains': '',
-    'mouseMoveDebounceTimeout': 25,
+    'mouseMoveDebounceTimeout': 20,
     'showDescription': true,
     'showThumbnail': true,
     'showOnlyWhenThreeDots': false,
     'whitelistDomains': '',
-    'thumbnailOnSide': false
+    'thumbnailOnSide': false,
+    'tooltipPosition': 'overLink' /// possible values: overLink, bottomLeft, bottomRight
 };
 
 function loadUserConfigs(callback) {

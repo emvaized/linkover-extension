@@ -143,7 +143,12 @@ function setPageListeners() {
 
 function showTooltip(linkEl, data, dx) {
     const tooltip = document.createElement('div');
-    tooltip.className = 'link-tooltip initial-tooltip';
+    tooltip.className = 'link-tooltip';
+
+    /// prepare reveal animation when position set over link
+    if (configs.tooltipPosition == 'overLink') {
+        tooltip.classList.add('initial-tooltip');
+    }
 
     /// show tooltip on side
     if (configs.thumbnailOnSide) {
@@ -190,7 +195,6 @@ function showTooltip(linkEl, data, dx) {
 
         /// placeholder icon
         favicon.addEventListener('error', function () {
-            // favicon.style.transform = 'rotate(45deg)';
             // favicon.src = 'link.svg';
             favicon.src = faviconFetchUrl + data.url.split('/')[2];
         });
@@ -226,13 +230,38 @@ function showTooltip(linkEl, data, dx) {
 
     /// calculate position
     const linkRect = linkEl.getBoundingClientRect();
-    tooltip.style.top = `${linkRect.top - 8.5}px`;
-    tooltip.style.left = dx ? `${dx}px` : `${linkRect.left + (linkRect.width / 2)}px`;
+    const screenEdgeMargin = '10px';
+    
+
+    switch(configs.tooltipPosition){
+        case 'overLink': {
+            tooltip.style.top = `${linkRect.top - 8.5}px`;
+            tooltip.style.left = dx ? `${dx}px` : `${linkRect.left + (linkRect.width / 2)}px`;
+        } break;
+        case 'bottomLeft': {
+            tooltip.style.bottom = '20px'; /// more padding because of browser's url tooltip
+            tooltip.style.left = screenEdgeMargin;
+        } break;
+        case 'bottomRight': {
+            tooltip.style.bottom = screenEdgeMargin;
+            tooltip.style.right = screenEdgeMargin;
+        } break;
+        case 'topRight': {
+            tooltip.style.top = screenEdgeMargin;
+            tooltip.style.right = screenEdgeMargin;
+        } break;
+        case 'topLeft': {
+            tooltip.style.top = screenEdgeMargin;
+            tooltip.style.left = screenEdgeMargin;
+        } break;
+    }
 
     /// add tooltip arrow
     const arrow = document.createElement('div');
-    arrow.setAttribute('class', 'tooltip-arrow arrow-on-top');
-    tooltip.appendChild(arrow);
+    if (configs.tooltipPosition == 'overLink'){
+        arrow.setAttribute('class', 'tooltip-arrow arrow-on-top');
+        tooltip.appendChild(arrow);
+    }
 
     /// reveal tooltip
     tooltip.style.opacity = 0;
@@ -267,7 +296,10 @@ function showTooltip(linkEl, data, dx) {
     setTimeout(function () {
         tooltip.style.transition = `transform ${configs.transitionDuration}ms ease, opacity ${configs.transitionDuration}ms ease`;
         tooltip.style.opacity = 1;
-        tooltip.classList.add(dyOverflowed ? 'revealed-tooltip-bottom' : 'revealed-tooltip');
+
+        if (configs.tooltipPosition == 'overLink'){
+            tooltip.classList.add(dyOverflowed ? 'revealed-tooltip-bottom' : 'revealed-tooltip');
+        }
     }, 1);
     return tooltip;
 }

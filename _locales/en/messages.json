@@ -12,5 +12,11 @@
     "showOnlyWhenThreeDots": { "message": "Show only if text contains three dots (...)" },
     "maxCursorSpeed": { "message": "Max cursor speed allowed to trigger" },
     "thumbnailOnSide": { "message": "Show thumbnail on the left side" },
-    "changeColorForProccessedLinks": { "message": "Highlight links which are being loaded" }
+    "changeColorForProccessedLinks": { "message": "Highlight links which are being loaded" },
+    "tooltipPosition": { "message": "Tooltip position" },
+    "overLink": { "message": "Over link" },
+    "bottomLeft": { "message": "Bottom left" },
+    "bottomRight": { "message": "Bottom right" },
+    "topRight": { "message": "Top right" },
+    "topLeft": { "message": "Top left" }
 }

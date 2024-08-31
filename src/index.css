@@ -167,6 +167,7 @@
     border-bottom: 0.5px solid lightgray;
     border-right: 0.5px solid lightgray;
     background: inherit !important;
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important; */
 }
 
 .arrow-on-top {
