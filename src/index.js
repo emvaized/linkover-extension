@@ -6,13 +6,31 @@ const faviconFetchUrl = 'https://s2.googleusercontent.com/s2/favicons?domain=';
 loadUserConfigs(function(cfg){
     if (!configs.enabled) return;
 
+    let couldRun = true;
+    /// Check excluded domains
     configs.excludedDomains.split(',').forEach((domain) => {
-        if (window.location.href.includes(domain.trim().toLowerCase())) return;
+        if (domain && window.location.href.includes(domain.trim().toLowerCase())) {
+            couldRun = false;
+            return;
+        }
     });
-    setPageListeners();  
-})
-chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
+    if (couldRun == false) return; 
 
+    /// Check whitelist domains
+    if (configs.whitelistDomains) {
+        couldRun = false;
+        configs.whitelistDomains.split(',').forEach((domain) => {
+            if (domain && window.location.href.includes(domain.trim().toLowerCase())) {
+                couldRun = true;
+                return;
+            }
+        });
+    }
+    if (couldRun == false) return; 
+    
+    setPageListeners();  
+    chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
+})
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
