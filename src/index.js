@@ -1,4 +1,4 @@
-let timeoutToShowPopup, timeoutToAddLoadingCursor, timeoutDebounceMousemove;
+let timeoutToShowPopup, timeoutToAddLoadingCursor, timeoutDebounceMousemove, timeoutDebounceWindowListeners;
 let tooltipShown = false, lastMouseMoveDx, lastHoveredLink;
 const cachedData = {};
 const faviconFetchUrl = 'https://s2.googleusercontent.com/s2/favicons?domain=';
@@ -13,21 +13,16 @@ loadUserConfigs(function(cfg){
 })
 chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
 
+
 function setPageListeners() {
     /// prevent unwanted tooltip appear
     ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
-        .forEach(event => document.addEventListener(event, e => {
-        if (lastHoveredLink) {
-            if (configs.changeColorForProccessedLinks) unhighlightProccessedLink(lastHoveredLink);
-            lastHoveredLink = false;
-            clearTimeout(timeoutToShowPopup);
-        }
-
-        if (tooltipShown) {
-            tooltipShown = false;
-            hideTooltip();
-        }
-    }));
+        .forEach(event => document.addEventListener(event, function(){
+            clearTimeout(timeoutDebounceWindowListeners);
+            timeoutDebounceWindowListeners = setTimeout(function(){
+                onHideTooltip();
+            },25)
+        }));
 
     /// set listener on mouse move
     let prevHoveredEl; /// cache previously hovered element
@@ -125,20 +120,7 @@ function setPageListeners() {
                 }, configs.hoverDelay);
             } else {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
-                
-                if (tooltipShown) {
-                    tooltipShown = false;
-                    hideTooltip();  
-                }
-
-                if (lastHoveredLink){
-                    if (configs.changeColorForProccessedLinks)
-                        unhighlightProccessedLink(lastHoveredLink)
-                    lastHoveredLink = false;
-                }
-    
-                clearTimeout(timeoutToShowPopup);
-                if (configs.changeCursorToLoading) disableLoadingCursor(el)
+                onHideTooltip(el);
             }
         }, configs.mouseMoveDebounceTimeout)
     }, false);
@@ -307,6 +289,22 @@ function showTooltip(linkEl, data, dx) {
         }
     }, 1);
     return tooltip;
+}
+
+function onHideTooltip(el){
+    if (tooltipShown) {
+        tooltipShown = false;
+        hideTooltip();  
+    }
+
+    if (lastHoveredLink){
+        if (configs.changeColorForProccessedLinks)
+            unhighlightProccessedLink(lastHoveredLink)
+        lastHoveredLink = false;
+    }
+
+    clearTimeout(timeoutToShowPopup);
+    if (configs.changeCursorToLoading) disableLoadingCursor(el ?? lastHoveredLink)
 }
 
 function hideTooltip() {
