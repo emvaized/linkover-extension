@@ -152,10 +152,8 @@
     min-width: 120px !important;
     max-width: 120px !important;
     border: none;
-    /* object-fit: cover !important; */
-    object-fit: contain !important;
+    object-fit: cover !important;
     min-height: unset !important;
-    /* vertical-align: middle !important; */
 }
 
 .link-tooltip img {
