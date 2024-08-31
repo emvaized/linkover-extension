@@ -146,7 +146,8 @@ function showTooltip(linkEl, data, dx) {
     tooltip.className = 'link-tooltip';
 
     /// prepare reveal animation when position set over link
-    if (configs.tooltipPosition == 'overLink') {
+    const showTooltipOverLink = configs.tooltipPosition == 'overLink';
+    if (showTooltipOverLink) {
         tooltip.classList.add('initial-tooltip');
     }
 
@@ -232,7 +233,6 @@ function showTooltip(linkEl, data, dx) {
     const linkRect = linkEl.getBoundingClientRect();
     const screenEdgeMargin = '10px';
     
-
     switch(configs.tooltipPosition){
         case 'overLink': {
             tooltip.style.top = `${linkRect.top - 8.5}px`;
@@ -258,7 +258,7 @@ function showTooltip(linkEl, data, dx) {
 
     /// add tooltip arrow
     const arrow = document.createElement('div');
-    if (configs.tooltipPosition == 'overLink'){
+    if (showTooltipOverLink){
         arrow.setAttribute('class', 'tooltip-arrow arrow-on-top');
         tooltip.appendChild(arrow);
     }
@@ -268,36 +268,38 @@ function showTooltip(linkEl, data, dx) {
     document.body.appendChild(tooltip);
 
     /// check if tooltip will go off-screen on top – if yes, move below link
-    let dyOverflowed = linkRect.top - 7.5 - tooltip.clientHeight < 0;
-    if (dyOverflowed) {
-        tooltip.style.top = `${linkRect.top + linkRect.height + 11}px`;
-        tooltip.classList.remove('initial-tooltip');
-        tooltip.classList.add('initial-tooltip-bottom');
-
-        arrow.classList.remove('arrow-on-top');
-        arrow.classList.add('arrow-on-bottom');
-
-        if (thumbnail && !configs.thumbnailOnSide) {
-            const newThumbnail = thumbnail.cloneNode();
-            thumbnail.remove();
-            newThumbnail.classList.remove('top-thumbnail');
-            newThumbnail.classList.add('bottom-thumbnail');
-            tooltip.appendChild(newThumbnail);
+    const dyOverflowed = linkRect.top - 7.5 - tooltip.clientHeight < 0;
+    if (showTooltipOverLink){
+        if (dyOverflowed) {
+            tooltip.style.top = `${linkRect.top + linkRect.height + 11}px`;
+            tooltip.classList.remove('initial-tooltip');
+            tooltip.classList.add('initial-tooltip-bottom');
+    
+            arrow.classList.remove('arrow-on-top');
+            arrow.classList.add('arrow-on-bottom');
+    
+            if (thumbnail && !configs.thumbnailOnSide) {
+                const newThumbnail = thumbnail.cloneNode();
+                thumbnail.remove();
+                newThumbnail.classList.remove('top-thumbnail');
+                newThumbnail.classList.add('bottom-thumbnail');
+                tooltip.appendChild(newThumbnail);
+            }
+        }
+    
+        /// Check tooltip to overflow on the left
+        const tooltipRect = tooltip.getBoundingClientRect();
+        if (tooltipRect.left < 0) {
+            tooltip.style.left = `${dx + (-1 * tooltipRect.left) + 5}px`;
+            arrow.style.marginLeft = `${tooltipRect.left}px`;
         }
     }
-
-    /// Check tooltip to overflow on the left
-    const tooltipRect = tooltip.getBoundingClientRect();
-    if (tooltipRect.left < 0) {
-        tooltip.style.left = `${dx + (-1 * tooltipRect.left) + 5}px`;
-        arrow.style.marginLeft = `${tooltipRect.left}px`;
-    }
-
+   
     setTimeout(function () {
         tooltip.style.transition = `transform ${configs.transitionDuration}ms ease, opacity ${configs.transitionDuration}ms ease`;
         tooltip.style.opacity = 1;
 
-        if (configs.tooltipPosition == 'overLink'){
+        if (showTooltipOverLink){
             tooltip.classList.add(dyOverflowed ? 'revealed-tooltip-bottom' : 'revealed-tooltip');
         }
     }, 1);
@@ -322,7 +324,8 @@ function setLoadingCursor(el){
 
 function disableLoadingCursor(el){
     clearTimeout(timeoutToAddLoadingCursor);
-    el.classList.remove('loading-cursor');
+    if (el.classList)
+        el.classList.remove('loading-cursor');
 }
 
 function highlightProccessedLink(el){
@@ -330,5 +333,6 @@ function highlightProccessedLink(el){
 }
 
 function unhighlightProccessedLink(el){
-    el.classList.remove('link-tooltip-processing');
+    if (el.classList)
+        el.classList.remove('link-tooltip-processing');
 }
