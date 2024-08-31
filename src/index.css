@@ -11,6 +11,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
     padding: 4px !important;
     opacity: 0 !important;
+    transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease;
 }
 
 .link-tooltip.opaque{
@@ -160,6 +161,11 @@
 
 .link-tooltip img {
     filter: none !important;
+    opacity: 0 !important;
+    transition: opacity 150ms ease, height 150ms ease !important;
+}
+.link-tooltip img.opaque{
+    opacity: 1 !important;
 }
 
 .limited-lines-text {

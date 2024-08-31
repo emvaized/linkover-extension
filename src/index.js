@@ -28,9 +28,14 @@ loadUserConfigs(function(cfg){
     }
     if (couldRun == false) return; 
     
-    setPageListeners();  
-    chrome.storage.onChanged.addListener((changes) => loadUserConfigs());
+    setCssVariables();
+    setPageListeners();
+    chrome.storage.onChanged.addListener((c) => {loadUserConfigs(), setCssVariables()});
 })
+
+function setCssVariables(){
+    document.documentElement.style.setProperty('--linkover-transition-duration', configs.transitionDuration + 'ms');
+}
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
@@ -168,6 +173,8 @@ function showTooltip(linkEl, data, dx) {
             thumbnail.addEventListener('load', function (ev) {
                 if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
                     thumbnail.classList.add('stretched-thumbnail');
+
+                thumbnail.classList.add('opaque');
             });
     
             thumbnail.addEventListener('error', function () {
@@ -199,6 +206,10 @@ function showTooltip(linkEl, data, dx) {
         favicon.addEventListener('error', function () {
             // favicon.src = 'link.svg';
             favicon.src = faviconFetchUrl + data.url.split('/')[2];
+        });
+
+        favicon.addEventListener('load', function () {
+            favicon.classList.add('opaque');
         });
     }
 
@@ -264,8 +275,6 @@ function showTooltip(linkEl, data, dx) {
         tooltip.appendChild(arrow);
     }
 
-    /// reveal tooltip
-    tooltip.style.transition = `transform ${configs.transitionDuration}ms ease, opacity ${configs.transitionDuration}ms ease`;
     document.body.appendChild(tooltip);
 
     /// check if tooltip will go off-screen on top – if yes, move below link

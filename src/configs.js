@@ -1,5 +1,5 @@
 const configs = {
-    'transitionDuration': 250,
+    'transitionDuration': 200,
     'hoverDelay': 1000,
     'enabled': true,
     'debugMode': false,
