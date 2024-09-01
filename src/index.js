@@ -219,16 +219,25 @@ function showTooltip(linkEl, data, dx) {
 
     let fullUrl = data.url.replace('https://', '').replace('http://', '');
     if (fullUrl.slice(-1) == '/') fullUrl = fullUrl.slice(0, -1);
-    const domainText = fullUrl.split('/')[0];
-    const domain = document.createElement('span');
-    domain.className = 'domain';
-    domain.innerText = domainText;
-    url.appendChild(domain);
 
-    const restOfurl = document.createElement('span');
-    restOfurl.innerText = fullUrl.replace(domainText, '');
-    restOfurl.className = 'sub-url';
-    url.appendChild(restOfurl);
+    if (configs.showSiteNameInsteadOfUrl && data.siteName) {
+        const domain = document.createElement('span');
+        domain.className = 'domain';
+        domain.innerText = data.siteName;
+        url.appendChild(domain);
+    } else {
+        const domain = document.createElement('span');
+        domain.className = 'domain';
+        const domainText = fullUrl.split('/')[0];
+        domain.innerText = domainText;
+        url.appendChild(domain);
+    
+        const restOfurl = document.createElement('span');
+        restOfurl.innerText = fullUrl.replace(domainText, '');
+        restOfurl.className = 'sub-url';
+        url.appendChild(restOfurl);
+    }
+   
     header.appendChild(url);
 
     /// add description
