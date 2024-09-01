@@ -162,7 +162,7 @@
 .link-tooltip img {
     filter: none !important;
     opacity: 0 !important;
-    transition: opacity 150ms ease, height 150ms ease !important;
+    transition: opacity 150ms ease !important;
 }
 .link-tooltip img.opaque{
     opacity: 1 !important;

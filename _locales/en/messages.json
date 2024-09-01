@@ -2,7 +2,7 @@
     "changeCursorToLoading": { "message": "Change cursor to loading" },
     "appName": { "message": "Linkover – Info Tooltip on Hover for Links" },
     "appDescription": { "message": "Shows info about the link on hover. Loads page title, thumbnail, description, URL and favicon" },
-    "showOnlyWithModifierKey": { "message": "Show only when modifier key is held (Ctrl,Shift,Alt etc)" },
+    "showOnlyWithModifierKey": { "message": "Show only when modifier key is held (Ctrl, Shift, Alt etc)" },
     "excludedDomains": { "message": "Blacklist domains" },
     "whitelistDomains": { "message": "Whitelist domains" },
     "mouseMoveDebounceTimeout": { "message": "How often to check element under cursor (ms)" },
