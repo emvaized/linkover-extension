@@ -20,5 +20,7 @@
     "topRight": { "message": "Top right" },
     "topLeft": { "message": "Top left" },
     "keepShownOnMouseOut": { "message": "Keep tooltip shown on mouse out (for debug)" },
-    "showSiteNameInsteadOfUrl": { "message": "Show site name instead of url" }
+    "showSiteNameInsteadOfUrl": { "message": "Show site name instead of url" },
+    "previewNotAvailable": { "message": "Preview not available" },
+    "image": { "message": "Image" }
 }

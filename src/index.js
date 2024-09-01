@@ -110,7 +110,6 @@ function setPageListeners() {
                         /// Fetch response via JavaScript
                         chrome.runtime.sendMessage({ actionToDo: 'fetchLinkInfo', url: hoveredUrl }, (response) => {
                             if (!lastHoveredLink) return;
-    
                             if (configs.changeCursorToLoading) disableLoadingCursor(el)
     
                             if (!response) {
@@ -119,10 +118,16 @@ function setPageListeners() {
                                 /// When no result, show dummy tooltip only with favicon and url
                                 response = {
                                     'url': hoveredUrl,
+                                    'title': chrome.i18n.getMessage('previewNotAvailable') ?? 'Preview not available',
                                     'favicons': [
                                         faviconFetchUrl + hoveredUrl.split('/')[2]
                                     ]
                                 };
+                            }
+
+                            /// Add image title
+                            if (response.contentType && response.contentType.includes('image/') && !response.title) {
+                                response.title = chrome.i18n.getMessage('image') ?? 'Image';
                             }
     
                             if (configs.debugMode) {
