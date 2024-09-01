@@ -301,6 +301,12 @@ function showTooltip(linkEl, data, dx) {
             tooltip.style.left = `${dx + (-1 * tooltipRect.left) + 5}px`;
             arrow.style.marginLeft = `${tooltipRect.left}px`;
         }
+        /// Check on the right
+        const rightOverflow = tooltipRect.right - document.body.clientWidth;
+        if (rightOverflow > 0) {
+            tooltip.style.left = `${dx - rightOverflow - 5}px`;
+            arrow.style.marginLeft = `${rightOverflow}px`;
+        }
     }
    
     setTimeout(function () {
