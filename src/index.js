@@ -225,7 +225,7 @@ function showTooltip(linkEl, data, dx) {
     let fullUrl = data.url.replace('https://', '').replace('http://', '');
     if (fullUrl.slice(-1) == '/') fullUrl = fullUrl.slice(0, -1);
 
-    if (configs.showSiteNameInsteadOfUrl && data.siteName) {
+    if (configs.showSiteNameInsteadOfUrl && data.siteName && data.siteName !== data.title) {
         const domain = document.createElement('span');
         domain.className = 'domain';
         domain.innerText = data.siteName;
@@ -265,7 +265,7 @@ function showTooltip(linkEl, data, dx) {
             tooltip.style.left = dx ? `${dx}px` : `${linkRect.left + (linkRect.width / 2)}px`;
         } break;
         case 'bottomLeft': {
-            tooltip.style.bottom = '20px'; /// more padding because of browser's url tooltip
+            tooltip.style.bottom = '25px'; /// more padding because of browser's url tooltip
             tooltip.style.left = screenEdgeMargin;
         } break;
         case 'bottomRight': {
