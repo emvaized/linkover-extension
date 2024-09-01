@@ -4,7 +4,7 @@
     color: black !important;
     z-index: 999999999999 !important;
     outline: 1px solid lightgray;
-    /* min-width: 300px !important; */
+    min-width: 300px !important;
     max-width: 300px !important;
     border-radius: 4px !important;
     pointer-events: none !important;
@@ -145,6 +145,7 @@
 .link-tooltip.thumbnail-on-side {
     display: flex !important;
     max-width: 400px !important;
+    min-width: 400px !important;
 }
 
 .link-tooltip.thumbnail-on-side .thumbnail {

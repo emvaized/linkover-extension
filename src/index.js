@@ -160,15 +160,17 @@ function showTooltip(linkEl, data, dx) {
         tooltip.classList.add('initial-tooltip');
     }
 
-    /// show tooltip on side
-    if (configs.thumbnailOnSide) {
-        tooltip.classList.add('thumbnail-on-side');
-    }
+    
 
     /// thumbnail
     let thumbnail;
     if (configs.showThumbnail) {
         if (data.images || (data.contentType && data.contentType.includes('image/'))){
+            /// show tooltip on side
+            if (configs.thumbnailOnSide) {
+                tooltip.classList.add('thumbnail-on-side');
+            }
+
             thumbnail = document.createElement('img');
             thumbnail.className = 'thumbnail top-thumbnail';
             thumbnail.height = '150px';
@@ -184,6 +186,9 @@ function showTooltip(linkEl, data, dx) {
     
             thumbnail.addEventListener('error', function () {
                 thumbnail.remove();
+                if (configs.thumbnailOnSide) {
+                    tooltip.classList.remove('thumbnail-on-side');
+                }
             });
         }
     }
