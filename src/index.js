@@ -289,11 +289,9 @@ function showTooltip(linkEl, data, dx) {
             arrow.classList.add('arrow-on-bottom');
     
             if (thumbnail && !configs.thumbnailOnSide) {
-                const newThumbnail = thumbnail.cloneNode();
-                thumbnail.remove();
-                newThumbnail.classList.remove('top-thumbnail');
-                newThumbnail.classList.add('bottom-thumbnail');
-                tooltip.appendChild(newThumbnail);
+                thumbnail.classList.remove('top-thumbnail');
+                thumbnail.classList.add('bottom-thumbnail');
+                tooltip.appendChild(thumbnail);
             }
         }
     
