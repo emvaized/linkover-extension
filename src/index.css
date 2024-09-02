@@ -75,7 +75,7 @@
 .link-tooltip .url {
     all: revert;
     display: block !important;
-    margin: 0 0 6px !important;
+    margin: 6px 0 2px !important;
     -webkit-line-clamp: 1 !important;
     line-clamp: 1 !important;
     font-size: 13px !important;
@@ -84,6 +84,10 @@
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+}
+
+.link-tooltip .url.description-below-url {
+    margin: 0 0 6px !important;
 }
 
 .link-tooltip .url .domain {

@@ -203,23 +203,13 @@ function showTooltip(linkEl, data, dx) {
         header.appendChild(title);
     }
 
-    /// add favicon
-    if (data.favicons && data.favicons[0]) {
-        const favicon = document.createElement('img');
-        favicon.className = 'page-favicon';
-        favicon.height = '16px';
-        favicon.src = data.favicons[0];
-        header.appendChild(favicon);
-
-        /// placeholder icon
-        favicon.addEventListener('error', function () {
-            // favicon.src = 'link.svg';
-            favicon.src = faviconFetchUrl + data.url.split('/')[2];
-        });
-
-        favicon.addEventListener('load', function () {
-            favicon.classList.add('opaque');
-        });
+    /// add description
+    let description;
+    if (configs.showDescription && data.description) {
+        description = document.createElement('p');
+        description.className = 'description limited-lines-text';
+        description.textContent = data.description.trim();
+        header.appendChild(description);
     }
 
     /// add page url
@@ -246,15 +236,32 @@ function showTooltip(linkEl, data, dx) {
         restOfurl.className = 'sub-url';
         url.appendChild(restOfurl);
     }
-   
-    header.appendChild(url);
 
-    /// add description
-    if (configs.showDescription && data.description) {
-        const description = document.createElement('p');
-        description.className = 'description limited-lines-text';
-        description.textContent = data.description.trim();
-        header.appendChild(description);
+    /// add favicon
+    if (data.favicons && data.favicons[0]) {
+        const favicon = document.createElement('img');
+        favicon.className = 'page-favicon';
+        favicon.height = '16px';
+        favicon.width = '16px';
+        favicon.src = data.favicons[0];
+        url.prepend(favicon);
+
+        /// placeholder icon
+        favicon.addEventListener('error', function () {
+            // favicon.src = 'link.svg';
+            favicon.src = faviconFetchUrl + data.url.split('/')[2];
+        });
+
+        favicon.addEventListener('load', function () {
+            favicon.classList.add('opaque');
+        });
+    }
+   
+    if (configs.descriptionBelowUrl) {
+        url.classList.add("description-below-url");
+        header.insertBefore(url, description);
+    } else {
+        header.appendChild(url);
     }
 
     tooltip.appendChild(header);

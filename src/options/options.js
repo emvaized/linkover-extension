@@ -68,4 +68,5 @@ function init(){
 function updateDisabledOptions() {
     /// Grey out unavailable optoins
     document.getElementById("thumbnailOnSide").parentNode.className = document.getElementById("showThumbnail").checked ? 'enabled-option' : 'disabled-option';
+    document.getElementById("descriptionBelowUrl").parentNode.className = document.getElementById("showDescription").checked ? 'enabled-option' : 'disabled-option';
 }

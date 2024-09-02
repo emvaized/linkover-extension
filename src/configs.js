@@ -19,6 +19,7 @@ const configs = {
     'thumbnailOnSide': false,
     'keepShownOnMouseOut': false,
     'showSiteNameInsteadOfUrl': true,
+    'descriptionBelowUrl': false,
     'tooltipPosition': 'overLink' /// possible values: overLink, bottomLeft, bottomRight
 };
 
