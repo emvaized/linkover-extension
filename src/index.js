@@ -160,8 +160,6 @@ function showTooltip(linkEl, data, dx) {
         tooltip.classList.add('initial-tooltip');
     }
 
-    
-
     /// thumbnail
     let thumbnail;
     if (configs.showThumbnail) {
