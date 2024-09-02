@@ -332,7 +332,7 @@ function showTooltip(linkEl, data, dx) {
             tooltip.style.left = `${dx - rightOverflow - 5}px`;
             arrow.style.marginLeft = `${rightOverflow}px`;
         }
-    } else {
+    } else if (configs.preventTooltipFromCoverLink) {
         /// Check if tooltip will cover the link itself, and move to another side
         const tooltipRect = tooltip.getBoundingClientRect();
         if (linkRect.left > tooltipRect.left && linkRect.left < tooltipRect.left + tooltipRect.width) {

@@ -24,5 +24,6 @@
     "previewNotAvailable": { "message": "Preview not available" },
     "image": { "message": "Image" },
     "transitionDuration": { "message": "Duration for show animation" },
-    "descriptionBelowUrl": { "message": "Show description below the domain" }
+    "descriptionBelowUrl": { "message": "Show description below the domain" },
+    "preventTooltipFromCoverLink": { "message": "Prevent tooltip from covering the link" }
 }
