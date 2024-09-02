@@ -19,22 +19,22 @@
 }
 
 .link-tooltip.initial-tooltip {
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%) !important;
     /* transform: translate(-50%, -25%) scale(0) !important; */
 }
 
 .link-tooltip.revealed-tooltip {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%) !important;
     /* transform: translate(-50%, -100%) scale(1) !important; */
 }
 
 .link-tooltip.initial-tooltip-bottom {
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -25%) !important;
     /* transform: translate(-50%, -75%) scale(0) !important; */
 }
 
 .link-tooltip.revealed-tooltip-bottom {
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%) !important;
     /* transform: translate(-50%, 0%) scale(1) !important; */
 }
 
@@ -49,8 +49,7 @@
 .link-tooltip .title {
     all: revert;
     font-size: 18px !important;
-    /* margin: 3px 0px 4px !important; */
-    margin: 0px 0px 4px !important;
+    margin: 0px 0px 6px !important;
     -webkit-line-clamp: 3 !important;
     line-clamp: 3 !important;
     line-height: normal !important;
@@ -74,13 +73,9 @@
 .link-tooltip .url {
     all: revert;
     display: block !important;
-    margin: 4px 0px !important;
-    margin-top: 0px !important;
+    margin: 0 0 6px !important;
     -webkit-line-clamp: 1 !important;
     line-clamp: 1 !important;
-    /* max-width: 90% !important; */
-    /* float: left; */
-    /* clear: none !important; */
     font-size: 13px !important;
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
@@ -109,8 +104,6 @@
     font-family: Arial, Helvetica, sans-serif !important;
     width: 100% !important;
     margin: 0 !important;
-    /* padding-top: 4px !important; */
-    padding-top: 2px !important;
 }
 
 /* Thumbnail */
