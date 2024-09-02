@@ -326,6 +326,21 @@ function showTooltip(linkEl, data, dx) {
             tooltip.style.left = `${dx - rightOverflow - 5}px`;
             arrow.style.marginLeft = `${rightOverflow}px`;
         }
+    } else {
+        /// Check if tooltip will cover the link itself, and move to another side
+        const tooltipRect = tooltip.getBoundingClientRect();
+        if (linkRect.left > tooltipRect.left && linkRect.left < tooltipRect.left + tooltipRect.width) {
+            if (linkRect.top > tooltipRect.top && linkRect.top < tooltipRect.top + tooltipRect.height) {
+                /// Move tooltip to other side to not cover the link
+                if (tooltip.style.left) {
+                    tooltip.style.right = tooltip.style.left;
+                    tooltip.style.left = 'unset';
+                } else {
+                    tooltip.style.left = tooltip.style.right;
+                    tooltip.style.right = 'unset';
+                }
+            }
+        }
     }
    
     setTimeout(function () {
