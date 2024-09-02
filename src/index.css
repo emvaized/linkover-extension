@@ -11,6 +11,8 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
     padding: 4px !important;
     opacity: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
     transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease;
 }
 
@@ -109,7 +111,7 @@
 /* Thumbnail */
 .link-tooltip .thumbnail {
     all: revert;
-    width: 100% !important;
+    /* width: 100% !important; */
     object-fit: contain !important;
     max-width: 300px !important;
     max-height: 150px !important;
@@ -146,6 +148,7 @@
     display: flex !important;
     max-width: 400px !important;
     min-width: 400px !important;
+    flex-direction: row !important;
 }
 
 .link-tooltip.thumbnail-on-side .thumbnail {

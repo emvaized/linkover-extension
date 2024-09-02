@@ -48,15 +48,16 @@ function setPageListeners() {
         }));
 
     /// set listener on mouse move
-    // let prevHoveredEl; /// cache previously hovered element
+    let prevHoveredEl; /// <- cache previously hovered element
+    
     // document.addEventListener('mousemove', function (e) {
     document.addEventListener('mouseover', function (e) {
         window.clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = window.setTimeout(function(){
             if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
             const el = e.target;
-            // if (el == prevHoveredEl) return;
-            // prevHoveredEl = el;
+            if (el == prevHoveredEl) return;
+            prevHoveredEl = el;
     
             if (el.tagName == 'A' || (el.parentNode && el.parentNode.tagName == 'A')) {
                 lastMouseMoveDx = e.clientX;
