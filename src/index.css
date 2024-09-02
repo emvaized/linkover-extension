@@ -228,21 +228,21 @@
     .link-tooltip {
         background-color: #2b2a33 !important;
         color: white !important;
-        border: 1px solid darkgray;
+        outline: 1px solid gray;
     }
     
     .link-tooltip .tooltip-arrow {
         background-color: #2b2a33 !important;
-        border-bottom: 1px solid darkgray;
-        border-right: 1px solid darkgray;
+        border-bottom: 1px solid gray;
+        border-right: 1px solid gray;
     }
     
     .link-tooltip .top-thumbnail {
-        border-bottom: 1px solid darkgray !important;
+        border-bottom: 1px solid gray !important;
     }
     
     .link-tooltip .bottom-thumbnail {
-        border-top: 1px solid darkgray !important;
+        border-top: 1px solid gray !important;
     }
     
     .link-tooltip .domain {
@@ -254,7 +254,7 @@
     }
 
     .link-tooltip.thumbnail-on-side .thumbnail {
-        border: 1px solid darkgray !important;
+        border: 1px solid gray !important;
     }
 }
 
