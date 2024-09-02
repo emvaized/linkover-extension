@@ -18,7 +18,7 @@ const configs = {
     'whitelistDomains': '',
     'thumbnailOnSide': false,
     'keepShownOnMouseOut': false,
-    'showSiteNameInsteadOfUrl': false,
+    'showSiteNameInsteadOfUrl': true,
     'tooltipPosition': 'overLink' /// possible values: overLink, bottomLeft, bottomRight
 };
 
