@@ -10,7 +10,7 @@ const configs = {
     'showOnlyUrlWhenNoData': true,
     'showOnlyWithModifierKey': true,
     'excludedDomains': '',
-    'mouseMoveDebounceTimeout': 100,
+    'mouseMoveDebounceTimeout': 80,
     'windowsEventsDebounceTimeout': 30,
     'showDescription': true,
     'showThumbnail': true,
