@@ -23,5 +23,5 @@
     "showSiteNameInsteadOfUrl": { "message": "Show site name instead of url" },
     "previewNotAvailable": { "message": "Preview not available" },
     "image": { "message": "Image" },
-    "transitionDuration": { "message": "Show animation duration" }
+    "transitionDuration": { "message": "Duration for show animation" }
 }

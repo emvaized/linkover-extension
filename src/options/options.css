@@ -38,3 +38,7 @@ details div.option {
     margin-left: 8px;
     /* border-left: 1px solid lightgray; */
 }
+
+h5 {
+    opacity: 0.5;
+}
