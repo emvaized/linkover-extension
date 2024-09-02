@@ -36,9 +36,23 @@ h3, h5{
 
 details div.option {
     margin-left: 8px;
-    /* border-left: 1px solid lightgray; */
+    border-left: 1px solid lightgray;
 }
 
 h5 {
     opacity: 0.5;
+}
+
+.hint {
+    border-radius: 50%;
+    line-height: 1;
+    vertical-align: middle;
+    height: 12px;
+    width: 12px;
+    min-width: 12px;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid gray;
+    color: gray;
 }

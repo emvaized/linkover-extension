@@ -23,7 +23,8 @@
     "showSiteNameInsteadOfUrl": { "message": "Show site name instead of url" },
     "previewNotAvailable": { "message": "Preview not available" },
     "image": { "message": "Image" },
-    "transitionDuration": { "message": "Duration for show animation" },
+    "transitionDuration": { "message": "Duration of show/hide animation (ms)" },
     "descriptionBelowUrl": { "message": "Show description below the domain" },
-    "preventTooltipFromCoverLink": { "message": "Prevent tooltip from covering the link" }
+    "preventTooltipFromCoverLink": { "message": "Prevent tooltip from covering the link" },
+    "preventTooltipFromCoverLinkHint": { "message": "When tooltip is set to be shown in one of screen corners, this option will move it to another side if it could cover the hovered link" }
 }
