@@ -117,6 +117,7 @@
     overflow: hidden !important;
     padding: 0px !important;
     margin: 0px !important;
+    border: 1px solid lightgray !important;
 }
 
 .link-tooltip .stretched-thumbnail {
@@ -155,7 +156,6 @@
     border: none;
     object-fit: cover !important;
     min-height: unset !important;
-    border: 1px solid lightgray !important;
     padding: 0 !important;
 }
 
@@ -255,7 +255,7 @@
         color: white !important;
     }
 
-    .link-tooltip.thumbnail-on-side .thumbnail {
+    .link-tooltip .thumbnail {
         border: 1px solid gray !important;
     }
 }
