@@ -11,13 +11,12 @@ It can load page titles, favicons, short description and thumbnails for many lin
 |-|
 
 <details>
-    <summary>See more screenshots</summary>
-    | ![Screenshot 1](./screenshots/1.png) |
-    |-|
-    | ![Screenshot 1](./screenshots/3.png) |
-    |-|
-    | ![Screenshot 1](./screenshots/4.png) |
-    |-|
+    <summary>More screenshots...</summary>
+    <table>
+        <tr><td><img src="./screenshots/1.png" /></td></tr>
+        <tr><td><img src="./screenshots/3.png" /></td></tr>
+        <tr><td><img src="./screenshots/4.png" /></td></tr>
+    </table> 
 </details>
 
 
