@@ -13,8 +13,7 @@
         "128": "./assets/icon.png"
     },
     "background": {
-        "scripts": ["background.js"],
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
     "content_scripts": [
         {
@@ -38,5 +37,10 @@
     "options_ui": {
         "page": "options/options.html",
         "open_in_tab": false
+    },
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "linkover@emvaized.dev"
+        }
     }
 }
