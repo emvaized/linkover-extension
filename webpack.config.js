@@ -29,7 +29,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         "src/index.css",
-        { from: "_locales", to: "_locales" },
+        { from: "src/_locales", to: "_locales" },
         { from: "assets", to: "assets" },
         { from: "src/options", to: "options" },
         { from: "src/manifest.json", to: "manifest.json" },
