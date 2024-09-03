@@ -32,5 +32,6 @@
     "activationHeader": { "message": "Activation rules" },
     "appearanceHeader": { "message": "Appearance" },
     "behaviorHeader": { "message": "Behavior" },
-    "advancedSettingsHeader": { "message": "Advanced settings" }
+    "advancedSettingsHeader": { "message": "Advanced settings" },
+    "changes": { "message": "Changes" }
 }

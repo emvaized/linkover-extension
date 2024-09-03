@@ -70,6 +70,7 @@ function init(){
         }
         updateDisabledOptions();
         translateHeaders();
+        setVersionLabel();
     });
 }
 
@@ -88,4 +89,10 @@ function updateDisabledOptions() {
     /// Grey out unavailable optoins
     document.getElementById("thumbnailOnSide").parentNode.className = document.getElementById("showThumbnail").checked ? 'enabled-option' : 'disabled-option';
     document.getElementById("descriptionBelowUrl").parentNode.className = document.getElementById("showDescription").checked ? 'enabled-option' : 'disabled-option';
+}
+
+function setVersionLabel() {
+    const label = document.getElementById('extension-version');
+    const manifestData = chrome.runtime.getManifest();
+    label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href=''>${(chrome.i18n.getMessage("changes") ?? "Changes").toLowerCase()}</a>)`;
 }
