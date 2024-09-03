@@ -56,6 +56,10 @@ h5 {
     border: 1px solid gray;
     color: gray;
 }
+.hint:hover{
+    background: rgba(0,0,0,0.4);
+    color:white;
+}
 
 #extensionVersion {
     display:inline;
