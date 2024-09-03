@@ -9,7 +9,7 @@ This extension is able to load tab title, favicon, short description and thumbna
 > [!NOTE]\
 > Some websites might be blocking access for "robots", recognize this extension as such and block access. Unfortunately there is not much we could do about it.
 
-<img src="./screenshots/1.png>" />
+<img src="./screenshots/1.png" />
 
 
 ## Building
