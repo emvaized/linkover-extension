@@ -366,13 +366,11 @@ function onHideTooltip(el, keepShownOnMouseOut){
     }
 
     if (lastHoveredLink){
-        if (configs.changeColorForProccessedLinks)
-            unhighlightProccessedLink(lastHoveredLink)
+        if (configs.changeColorForProccessedLinks) unhighlightProccessedLink(lastHoveredLink);
+        if (configs.changeCursorToLoading) disableLoadingCursor(el ?? lastHoveredLink)
         lastHoveredLink = false;
+        clearTimeout(timeoutToShowPopup);
     }
-
-    clearTimeout(timeoutToShowPopup);
-    if (configs.changeCursorToLoading) disableLoadingCursor(el ?? lastHoveredLink)
 }
 
 function hideTooltip() {
