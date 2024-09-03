@@ -94,5 +94,5 @@ function updateDisabledOptions() {
 function setVersionLabel() {
     const label = document.getElementById('extensionVersion');
     const manifestData = chrome.runtime.getManifest();
-    label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href=''>${(chrome.i18n.getMessage("changelog") ?? "Changelog").toLowerCase()}</a>)`;
+    label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href='https://github.com/emvaized/linkover-extension/blob/main/CHANGELOG.md'>${(chrome.i18n.getMessage("changelog") ?? "Changelog").toLowerCase()}</a>)`;
 }
