@@ -1,0 +1,116 @@
+{
+    "activationHeader": {
+        "message": "Правила активации"
+    },
+    "advancedSettingsHeader": {
+        "message": "Дополнительные настройки"
+    },
+    "appDescription": {
+        "message": "Показывает информацию о ссылке при наведении. Загружает заголовок страницы, миниатюру, описание, URL и иконку"
+    },
+    "appName": {
+        "message": "Linkover - информационная всплывающая подсказка при наведении для ссылок"
+    },
+    "appearanceHeader": {
+        "message": "Внешний вид"
+    },
+    "behaviorHeader": {
+        "message": "Поведение"
+    },
+    "bottomLeft": {
+        "message": "Внизу слева"
+    },
+    "bottomRight": {
+        "message": "Внизу справа"
+    },
+    "changeColorForProccessedLinks": {
+        "message": "Подсвечивать ссылку, которая находится в обработке"
+    },
+    "changeCursorToLoading": {
+        "message": "Изменить курсор во время загрузки"
+    },
+    "changelog": {
+        "message": "изменения"
+    },
+    "descriptionBelowUrl": {
+        "message": "Показать описание после домена"
+    },
+    "excludedDomains": {
+        "message": "Черный список доменов"
+    },
+    "extensionSettingsHeader": {
+        "message": "Настройки перехода по ссылке"
+    },
+    "followRedirects": {
+        "message": "Следовать перенаправлениям ссылок"
+    },
+    "followRedirectsHint": {
+        "message": "Если включить эту опцию, расширение будет следовать за любыми перенаправлениями ссылок и сможет достичь и проанализировать больше страниц, но это создает риск для безопасности и должно использоваться с осторожностью!"
+    },
+    "hoverDelay": {
+        "message": "Задержка при наведении (мс)"
+    },
+    "image": {
+        "message": "Изображение"
+    },
+    "keepShownOnMouseOut": {
+        "message": "Держать панель открытой после отведения мыши (для отладки)"
+    },
+    "maxCursorSpeed": {
+        "message": "Максимальная скорость курсора, допустимая для срабатывания"
+    },
+    "mouseMoveDebounceTimeout": {
+        "message": "Таймер проверки элемента под курсором (мс)"
+    },
+    "mouseMoveDebounceTimeoutHint": {
+        "message": "Меньшее значение обеспечивает большую отзывчивость на движение мыши, но увеличивает нагрузку на процессор и батарею"
+    },
+    "overLink": {
+        "message": "Над ссылкой"
+    },
+    "preventTooltipFromCoverLink": {
+        "message": "Предотвратить перекрытие ссылки всплывающей подсказкой"
+    },
+    "preventTooltipFromCoverLinkHint": {
+        "message": "Если всплывающая подсказка отображается в одном из углов экрана, эта опция переместит ее на другую сторону, если она может перекрывать наведенную ссылку"
+    },
+    "previewNotAvailable": {
+        "message": "Предварительный просмотр недоступен"
+    },
+    "showDescription": {
+        "message": "Показать описание ссылки"
+    },
+    "showOnlyWhenThreeDots": {
+        "message": "Показывать, только если текст содержит три точки (...)"
+    },
+    "showOnlyWithModifierKey": {
+        "message": "Требуется клавиша-модификатор (Ctrl, Shift, Alt и т. д.)"
+    },
+    "showSiteNameInsteadOfUrl": {
+        "message": "Показывать название сайта вместо url"
+    },
+    "showThumbnail": {
+        "message": "Показывать миниатюру для ссылки"
+    },
+    "thumbnailOnSide": {
+        "message": "Компактная миниатюра сбоку"
+    },
+    "tooltipPosition": {
+        "message": "Положение всплывающей подсказки"
+    },
+    "topLeft": {
+        "message": "Вверху слева"
+    },
+    "topRight": {
+        "message": "Вверху справа"
+    },
+    "transitionDuration": {
+        "message": "Длительность анимации показа/скрытия (мс)"
+    },
+    "whitelistDomains": {
+        "message": "Белый список доменов"
+    },
+    "whitelistDomainsHint": {
+        "message": "Если указан хотя бы один домен, расширение будет работать только на этом домене, игнорируя все остальные"
+    }
+}

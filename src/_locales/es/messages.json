@@ -1,0 +1,116 @@
+{
+    "activationHeader": {
+        "message": "Reglas de activación"
+    },
+    "advancedSettingsHeader": {
+        "message": "Configuración avanzada"
+    },
+    "appDescription": {
+        "message": "Muestra información sobre el enlace al pasar el ratón por encima. Carga el título de la página, la miniatura, la descripción, la URL y el favicon"
+    },
+    "appName": {
+        "message": "Linkover - Información sobre enlaces al pasar el ratón por encima"
+    },
+    "appearanceHeader": {
+        "message": "Apariencia"
+    },
+    "behaviorHeader": {
+        "message": "Comportamiento"
+    },
+    "bottomLeft": {
+        "message": "Parte inferior izquierda"
+    },
+    "bottomRight": {
+        "message": "Abajo a la derecha"
+    },
+    "changeColorForProccessedLinks": {
+        "message": "Resaltar los enlaces que están siendo procesados"
+    },
+    "changeCursorToLoading": {
+        "message": "Cambiar cursor a cargando"
+    },
+    "changelog": {
+        "message": "Cambios"
+    },
+    "descriptionBelowUrl": {
+        "message": "Mostrar descripción debajo del dominio"
+    },
+    "excludedDomains": {
+        "message": "ListaNegraDominios"
+    },
+    "extensionSettingsHeader": {
+        "message": "Configuración de Linkover"
+    },
+    "followRedirects": {
+        "message": "Seguir redirecciones de enlaces"
+    },
+    "followRedirectsHint": {
+        "message": "Con esta opción activada, la extensión seguirá cualquier redirección de enlace y podría alcanzar y analizar más páginas, ¡pero impone riesgos de seguridad y debe usarse con precaución!"
+    },
+    "hoverDelay": {
+        "message": "Retraso al pasar el ratón (ms)"
+    },
+    "image": {
+        "message": "Imagen"
+    },
+    "keepShownOnMouseOut": {
+        "message": "Keep tooltip shown on mouse out (for debug)"
+    },
+    "maxCursorSpeed": {
+        "message": "Velocidad máxima del cursor permitida para disparar"
+    },
+    "mouseMoveDebounceTimeout": {
+        "message": "Temporizador para comprobar el elemento bajo el cursor (ms)"
+    },
+    "mouseMoveDebounceTimeoutHint": {
+        "message": "Un valor menor aporta más capacidad de respuesta al movimiento del ratón, pero aumenta la carga de la CPU y la batería"
+    },
+    "overLink": {
+        "message": "Sobreenlace"
+    },
+    "preventTooltipFromCoverLink": {
+        "message": "Evitar que el tooltip cubra el enlace"
+    },
+    "preventTooltipFromCoverLinkHint": {
+        "message": "Cuando el tooltip está configurado para mostrarse en una de las esquinas de la pantalla, esta opción lo moverá a otro lado si pudiera cubrir el enlace sobre el que se pasa el ratón"
+    },
+    "previewNotAvailable": {
+        "message": "Vista previa no disponible"
+    },
+    "showDescription": {
+        "message": "Mostrar descripción para enlace"
+    },
+    "showOnlyWhenThreeDots": {
+        "message": "Mostrar sólo si el texto contiene tres puntos (...)"
+    },
+    "showOnlyWithModifierKey": {
+        "message": "Requiere tecla modificadora (Ctrl, Shift, Alt, etc.)"
+    },
+    "showSiteNameInsteadOfUrl": {
+        "message": "Mostrar nombre del sitio en lugar de url"
+    },
+    "showThumbnail": {
+        "message": "Mostrar miniatura para enlace"
+    },
+    "thumbnailOnSide": {
+        "message": "Miniatura compacta en el lateral"
+    },
+    "tooltipPosition": {
+        "message": "Posición del tooltip"
+    },
+    "topLeft": {
+        "message": "Arriba a la izquierda"
+    },
+    "topRight": {
+        "message": "Arriba a la derecha"
+    },
+    "transitionDuration": {
+        "message": "Duración de la animación mostrar/ocultar (ms)"
+    },
+    "whitelistDomains": {
+        "message": "Lista blanca de dominios"
+    },
+    "whitelistDomainsHint": {
+        "message": "Cuando se especifica al menos un dominio, la extensión se ejecutará sólo en este dominio, ignorando todos los demás"
+    }
+}
