@@ -1,4 +1,4 @@
-# <sub><img src="./assets/icon.png" height="40" width="40"></sub> Linkover – info tooltip on hover for links
+# <sub><img src="./src/assets/icon.png" height="40" width="40"></sub> Linkover – info tooltip on hover for links
 
 Show info about any link on hover! 
 This extension is able to load tab title, favicon, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.

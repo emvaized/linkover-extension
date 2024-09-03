@@ -30,7 +30,7 @@ module.exports = {
       patterns: [
         "src/index.css",
         { from: "src/_locales", to: "_locales" },
-        { from: "assets", to: "assets" },
+        { from: "src/assets", to: "assets" },
         { from: "src/options", to: "options" },
         { from: "src/manifest.json", to: "manifest.json" },
         { from: "src/configs.js", to: "configs.js" },
