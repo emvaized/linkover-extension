@@ -6,11 +6,12 @@ This extension is able to load tab title, favicon, short description and thumbna
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
 
-<img src="./screenshots/1.png" />
+## Screenshots
+<img src="./screenshots/2.png" />
 
 <details>
     <summary>More screenshots</summary>
-    <img src="./screenshots/2.png" />
+    <img src="./screenshots/1.png" />
     <img src="./screenshots/3.png" />
     <img src="./screenshots/4.png" />
 </details>
