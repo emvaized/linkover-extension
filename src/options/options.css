@@ -57,6 +57,12 @@ h5 {
     color: gray;
 }
 
-#extension-version {
-    text-align: center;
-  }
+#extensionVersion {
+    display:inline;
+    margin-left:4px;
+    font-size:smaller;
+    color:grey;
+}
+#extensionVersion a {
+    text-decoration: none; 
+}

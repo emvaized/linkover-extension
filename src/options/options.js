@@ -92,7 +92,7 @@ function updateDisabledOptions() {
 }
 
 function setVersionLabel() {
-    const label = document.getElementById('extension-version');
+    const label = document.getElementById('extensionVersion');
     const manifestData = chrome.runtime.getManifest();
-    label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href=''>${(chrome.i18n.getMessage("changes") ?? "Changes").toLowerCase()}</a>)`;
+    label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href=''>${(chrome.i18n.getMessage("changelog") ?? "Changelog").toLowerCase()}</a>)`;
 }

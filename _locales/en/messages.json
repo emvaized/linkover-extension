@@ -33,5 +33,6 @@
     "appearanceHeader": { "message": "Appearance" },
     "behaviorHeader": { "message": "Behavior" },
     "advancedSettingsHeader": { "message": "Advanced settings" },
-    "changes": { "message": "Changes" }
+    "changelog": { "message": "Changelog" },
+    "whitelistDomainsHint": { "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others" }
 }
