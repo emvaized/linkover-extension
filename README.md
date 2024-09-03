@@ -1,19 +1,23 @@
-# <sub><img src="./src/assets/icon.png" height="40" width="40"></sub> Linkover – Info Tooltip on Hover for Links!
+# <sub><img src="./src/assets/icon.png" height="40" width="40"></sub> Linkover – info tooltip on hover for links!
 
 This browser extension shows info about any link on mouse hover.
-It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
+It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
 
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
 
 ## Screenshots
-<img src="./screenshots/2.png" />
+| ![Screenshot 1](./screenshots/2.png) |
+|-|
 
 <details>
-    <summary>More screenshots</summary>
-    <img src="./screenshots/1.png" >
-    <img src="./screenshots/3.png" />
-    <img src="./screenshots/4.png" />
+    <summary>See more screenshots</summary>
+    | ![Screenshot 1](./screenshots/1.png) |
+    |-|
+    | ![Screenshot 1](./screenshots/3.png) |
+    |-|
+    | ![Screenshot 1](./screenshots/4.png) |
+    |-|
 </details>
 
 
