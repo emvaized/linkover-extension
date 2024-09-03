@@ -12,11 +12,9 @@ It can load page titles, favicons, short description and thumbnails for many lin
 
 <details>
     <summary>More screenshots...</summary>
-    <table>
-        <tr><td><img src="./screenshots/1.png" /></td></tr>
-        <tr><td><img src="./screenshots/3.png" /></td></tr>
-        <tr><td><img src="./screenshots/4.png" /></td></tr>
-    </table> 
+        <table><tr><td><img src="./screenshots/1.png" /></td></tr></table> 
+        <table><tr><td><img src="./screenshots/3.png" /></td></tr></table> 
+        <table><tr><td><img src="./screenshots/4.png" /></td></tr></table> 
 </details>
 
 
