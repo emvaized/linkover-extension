@@ -1,40 +1,116 @@
 {
-    "changeCursorToLoading": { "message": "Change cursor to loading" },
-    "appName": { "message": "Linkover – Info Tooltip on Hover for Links" },
-    "appDescription": { "message": "Shows info about the link on hover. Loads page title, thumbnail, description, URL and favicon" },
-    "showOnlyWithModifierKey": { "message": "Show only when modifier key is held (Ctrl, Shift, Alt etc)" },
-    "excludedDomains": { "message": "Blacklist domains" },
-    "whitelistDomains": { "message": "Whitelist domains" },
-    "mouseMoveDebounceTimeout": { "message": "Timer to check element under cursor (ms)" },
-    "mouseMoveDebounceTimeoutHint": { "message": "Less value brings more responsiveness to mouse movement, but increases CPU and battery load" },
-    "hoverDelay": { "message": "Hover delay (ms)" },
-    "showDescription": { "message": "Show description for link" },
-    "showThumbnail": { "message": "Show thumbnail for link" },
-    "showOnlyWhenThreeDots": { "message": "Show only if text contains three dots (...)" },
-    "maxCursorSpeed": { "message": "Max cursor speed allowed to trigger" },
-    "thumbnailOnSide": { "message": "Compact thumbnail on the side" },
-    "changeColorForProccessedLinks": { "message": "Highlight links which are being processed" },
-    "tooltipPosition": { "message": "Tooltip position" },
-    "overLink": { "message": "Over link" },
-    "bottomLeft": { "message": "Bottom left" },
-    "bottomRight": { "message": "Bottom right" },
-    "topRight": { "message": "Top right" },
-    "topLeft": { "message": "Top left" },
-    "keepShownOnMouseOut": { "message": "Keep tooltip shown on mouse out (for debug)" },
-    "showSiteNameInsteadOfUrl": { "message": "Show site name instead of url" },
-    "previewNotAvailable": { "message": "Preview not available" },
-    "image": { "message": "Image" },
-    "transitionDuration": { "message": "Duration of show/hide animation (ms)" },
-    "descriptionBelowUrl": { "message": "Show description below the domain" },
-    "preventTooltipFromCoverLink": { "message": "Prevent tooltip from covering the link" },
-    "preventTooltipFromCoverLinkHint": { "message": "When tooltip is set to be shown in one of screen corners, this option will move it to another side if it could cover the hovered link" },
-    "extensionSettingsHeader": { "message": "Linkover Settings" },
-    "activationHeader": { "message": "Activation rules" },
-    "appearanceHeader": { "message": "Appearance" },
-    "behaviorHeader": { "message": "Behavior" },
-    "advancedSettingsHeader": { "message": "Advanced settings" },
-    "changelog": { "message": "Changelog" },
-    "whitelistDomainsHint": { "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others" },
-    "followRedirects": { "message": "Follow link redirects" },
-    "followRedirectsHint": { "message": "With this option enabled, extension will follow any link redirection and could reach and analyze more pages, but it imposes securiy risk and should be used with caution!" }
+    "activationHeader": {
+        "message": "Activation rules"
+    },
+    "advancedSettingsHeader": {
+        "message": "Advanced settings"
+    },
+    "appDescription": {
+        "message": "Shows info about the link on hover. Loads page title, thumbnail, description, URL and favicon"
+    },
+    "appName": {
+        "message": "Linkover – Info Tooltip on Hover for Links"
+    },
+    "appearanceHeader": {
+        "message": "Appearance"
+    },
+    "behaviorHeader": {
+        "message": "Behavior"
+    },
+    "bottomLeft": {
+        "message": "Bottom left"
+    },
+    "bottomRight": {
+        "message": "Bottom right"
+    },
+    "changeColorForProccessedLinks": {
+        "message": "Highlight links which are being processed"
+    },
+    "changeCursorToLoading": {
+        "message": "Change cursor to loading"
+    },
+    "changelog": {
+        "message": "Changelog"
+    },
+    "descriptionBelowUrl": {
+        "message": "Show description below the domain"
+    },
+    "excludedDomains": {
+        "message": "Blacklist domains"
+    },
+    "extensionSettingsHeader": {
+        "message": "Linkover Settings"
+    },
+    "followRedirects": {
+        "message": "Follow link redirects"
+    },
+    "followRedirectsHint": {
+        "message": "With this option enabled, extension will follow any link redirection and could reach and analyze more pages, but it imposes securiy risk and should be used with caution!"
+    },
+    "hoverDelay": {
+        "message": "Hover delay (ms)"
+    },
+    "image": {
+        "message": "Image"
+    },
+    "keepShownOnMouseOut": {
+        "message": "Keep tooltip shown on mouse out (for debug)"
+    },
+    "maxCursorSpeed": {
+        "message": "Max cursor speed allowed to trigger"
+    },
+    "mouseMoveDebounceTimeout": {
+        "message": "Timer to check element under cursor (ms)"
+    },
+    "mouseMoveDebounceTimeoutHint": {
+        "message": "Less value brings more responsiveness to mouse movement, but increases CPU and battery load"
+    },
+    "overLink": {
+        "message": "Over link"
+    },
+    "preventTooltipFromCoverLink": {
+        "message": "Prevent tooltip from covering the link"
+    },
+    "preventTooltipFromCoverLinkHint": {
+        "message": "When tooltip is set to be shown in one of screen corners, this option will move it to another side if it could cover the hovered link"
+    },
+    "previewNotAvailable": {
+        "message": "Preview not available"
+    },
+    "showDescription": {
+        "message": "Show description for link"
+    },
+    "showOnlyWhenThreeDots": {
+        "message": "Show only if text contains three dots (...)"
+    },
+    "showOnlyWithModifierKey": {
+        "message": "Show only when modifier key is held (Ctrl, Shift, Alt etc)"
+    },
+    "showSiteNameInsteadOfUrl": {
+        "message": "Show site name instead of url"
+    },
+    "showThumbnail": {
+        "message": "Show thumbnail for link"
+    },
+    "thumbnailOnSide": {
+        "message": "Compact thumbnail on the side"
+    },
+    "tooltipPosition": {
+        "message": "Tooltip position"
+    },
+    "topLeft": {
+        "message": "Top left"
+    },
+    "topRight": {
+        "message": "Top right"
+    },
+    "transitionDuration": {
+        "message": "Duration of show/hide animation (ms)"
+    },
+    "whitelistDomains": {
+        "message": "Whitelist domains"
+    },
+    "whitelistDomainsHint": {
+        "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others"
+    }
 }
