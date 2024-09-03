@@ -12,7 +12,9 @@ This extension is able to load tab title, favicon, short description and thumbna
 <details>
     <summary>More screenshots</summary>
     <img src="./screenshots/1.png" />
+
     <img src="./screenshots/3.png" />
+    
     <img src="./screenshots/4.png" />
 </details>
 
