@@ -110,7 +110,9 @@ function setPageListeners() {
                             setLoadingCursor(el)
     
                         /// Fetch response via JavaScript
-                        chrome.runtime.sendMessage({ actionToDo: 'fetchLinkInfo', url: hoveredUrl }, (response) => {
+                        chrome.runtime.sendMessage({ 
+                            actionToDo: 'fetchLinkInfo', url: hoveredUrl, followRedirects: configs.followRedirects 
+                        }, (response) => {
                             if (!lastHoveredLink) return;
                             if (configs.changeCursorToLoading) disableLoadingCursor(el)
 

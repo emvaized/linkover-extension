@@ -34,5 +34,7 @@
     "behaviorHeader": { "message": "Behavior" },
     "advancedSettingsHeader": { "message": "Advanced settings" },
     "changelog": { "message": "Changelog" },
-    "whitelistDomainsHint": { "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others" }
+    "whitelistDomainsHint": { "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others" },
+    "followRedirects": { "message": "Follow link redirects" },
+    "followRedirectsHint": { "message": "With this option enabled, extension will follow any link redirection and could reach and analyze more pages, but it imposes securiy risk and should be used with caution!" }
 }

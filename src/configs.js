@@ -21,6 +21,7 @@ const configs = {
     'showSiteNameInsteadOfUrl': true,
     'descriptionBelowUrl': false,
     'preventTooltipFromCoverLink': true,
+    'followRedirects': false,
     'tooltipPosition': 'overLink' /// possible values: overLink, bottomLeft, bottomRight
 };
 
