@@ -300,6 +300,10 @@ function showTooltip(linkEl, data, dx) {
         tooltip.appendChild(arrow);
     }
 
+    /// apply additional styles if tooltip set to show in corner
+    if (!showTooltipOverLink)
+        tooltip.classList.add('detached');
+
     document.body.appendChild(tooltip);
 
     /// check if tooltip will go off-screen on top – if yes, move below link

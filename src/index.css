@@ -267,6 +267,10 @@
     }
 }
 
+.link-tooltip.detached {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
 
 /* Different tooltip appearances (not used yet) */
 /* Gradient */
