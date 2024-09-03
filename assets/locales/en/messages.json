@@ -1,8 +1,0 @@
-{
-    "appName": {
-        "message": "Link Tooltip"
-    },
-    "appDescription": {
-        "message": "Show tooltip on hover links with general information, such as favicon, title, description and image"
-    }
-}

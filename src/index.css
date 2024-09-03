@@ -294,7 +294,7 @@
     backdrop-filter: blur(20px) !important;
 }
 .link-tooltip.add-blur::before {
-    background-image: url(./assets/noise_acrylic.png) !important;
+    /* background-image: url(./assets/noise_acrylic.png) !important; */
     position:absolute;
     top:0;
     left:0;
