@@ -1,7 +1,8 @@
 let timeoutToShowPopup, timeoutDebounceMousemove, timeoutDebounceWindowListeners;
 let tooltipShown = false, lastMouseMoveDx, lastHoveredLink;
 const cachedData = {};
-const faviconFetchUrl = 'https://s2.googleusercontent.com/s2/favicons?domain=';
+const googleFaviconFetchUrl = 'https://s2.googleusercontent.com/s2/favicons?domain={domain}';
+const ddFaviconFetchUrl = 'https://icons.duckduckgo.com/ip3/{domain}.ico';
 
 loadUserConfigs(function(cfg){
     if (!configs.enabled) return;
@@ -112,7 +113,7 @@ function setPageListeners() {
                         chrome.runtime.sendMessage({ actionToDo: 'fetchLinkInfo', url: hoveredUrl }, (response) => {
                             if (!lastHoveredLink) return;
                             if (configs.changeCursorToLoading) disableLoadingCursor(el)
-    
+
                             if (!response) {
                                 if (configs.showOnlyUrlWhenNoData == false) return;
     
@@ -121,7 +122,7 @@ function setPageListeners() {
                                     'url': hoveredUrl,
                                     'title': chrome.i18n.getMessage('previewNotAvailable') ?? 'Preview not available',
                                     'favicons': [
-                                        faviconFetchUrl + hoveredUrl.split('/')[2]
+                                        getUrlForFaviconFetch(hoveredUrl.split('/')[2])
                                     ]
                                 };
                             }
@@ -249,7 +250,7 @@ function showTooltip(linkEl, data, dx) {
         /// placeholder icon
         favicon.addEventListener('error', function () {
             // favicon.src = 'link.svg';
-            favicon.src = faviconFetchUrl + data.url.split('/')[2];
+            favicon.src = getUrlForFaviconFetch(data.url.split('/')[2]);
         });
 
         favicon.addEventListener('load', function () {
@@ -276,7 +277,7 @@ function showTooltip(linkEl, data, dx) {
             tooltip.style.left = dx ? `${dx}px` : `${linkRect.left + (linkRect.width / 2)}px`;
         } break;
         case 'bottomLeft': {
-            tooltip.style.bottom = '25px'; /// more padding because of browser's url tooltip
+            tooltip.style.bottom = '21px'; /// more padding because of browser's url tooltip
             tooltip.style.left = screenEdgeMargin;
         } break;
         case 'bottomRight': {
@@ -405,4 +406,11 @@ function highlightProccessedLink(el){
 function unhighlightProccessedLink(el){
     if (el && el.classList)
         el.classList.remove('link-tooltip-processing');
+}
+
+function getUrlForFaviconFetch(domain){
+    if (domain.includes('.github.io')) domain = 'github.io';
+
+    return ddFaviconFetchUrl.replace('{domain}', domain);
+    // return googleFaviconFetchUrl.replace('{domain}', domain)
 }
