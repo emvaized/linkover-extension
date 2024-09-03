@@ -11,6 +11,13 @@ This extension is able to load tab title, favicon, short description and thumbna
 
 <img src="./screenshots/1.png" />
 
+<details>
+    <summary>More screenshots</summary>
+    <img src="./screenshots/2.png" />
+    <img src="./screenshots/3.png" />
+    <img src="./screenshots/4.png" />
+</details>
+
 
 ## Building
 - Verify that [npm](https://nodejs.org/en/download/prebuilt-installer) is installed and configured on your system
