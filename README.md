@@ -1,4 +1,4 @@
-# <sub><img src="./src/assets/icon.png" height="40" width="40"></sub> Linkover – info tooltip on hover for links
+# <sub><img src="./src/assets/icon.png" height="40" width="40"></sub> Linkover – Info Tooltip on Hover for Links
 
 Show info about any link on hover! 
 This extension is able to load tab title, favicon, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
@@ -28,7 +28,7 @@ If you really enjoy this project, please consider supporting its further develop
 - Run `npm install` to install all it's dependencies
 - Run `npm run build` to generate `dist` folder with minimized code of the extension
 
-## My other browser extensions
+## Links to my other browser extensions
 * [Selecton](https://github.com/emvaized/selecton-extension) – smart text selection popup
 * [Circle Mouse Gestures](https://github.com/emvaized/circle-mouse-gestures) – mouse gestures with visual representation of all available actions
 * [Google Tweaks](https://github.com/emvaized/google-tiles-extension) – set of tweaks for Google search page to make it easier to use
