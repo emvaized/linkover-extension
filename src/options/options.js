@@ -69,7 +69,19 @@ function init(){
             }
         }
         updateDisabledOptions();
+        translateHeaders();
     });
+}
+
+function translateHeaders(){
+    const headerIds = [
+        'extensionSettingsHeader',
+        'activationHeader',
+        'appearanceHeader',
+        'behaviorHeader',
+        'advancedSettingsHeader',
+    ];
+    headerIds.forEach(id => document.getElementById(id).innerText = chrome.i18n.getMessage(id))
 }
 
 function updateDisabledOptions() {
