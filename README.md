@@ -2,15 +2,15 @@
 
 [![Mozilla Add-on Version](https://img.shields.io/amo/v/linkover?label=version&color=red)](https://addons.mozilla.org/firefox/addon/linkover/)
 [![Mozilla Add-on](https://img.shields.io/amo/users/linkover?color=%23FF6611&label=users&logo=Firefox)](https://addons.mozilla.org/firefox/addon/linkover/)
-[![Mozilla Add-on Stars](https://img.shields.io/amo/stars/linkover)](https://addons.mozilla.org/firefox/addon/linkover/)
-
-<a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a>
+[![Mozilla Add-on Stars](https://img.shields.io/amo/stars/linkover&color=green)](https://addons.mozilla.org/firefox/addon/linkover/)
 
 This browser extension shows info about any link on mouse hover.
 It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
 
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
+
+<a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a>
 
 ## Screenshots
 | ![Screenshot 1](./screenshots/2.png) |
