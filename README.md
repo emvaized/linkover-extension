@@ -6,7 +6,7 @@
 [![Mozilla Add-on Stars](https://img.shields.io/amo/stars/linkover)](https://addons.mozilla.org/firefox/addon/linkover/)
 
 This browser extension shows info about any link on mouse hover.
-It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses [link-preview-js](https://www.npmjs.com/package/link-preview-js) under the hood.
+It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses [my fork](https://github.com/emvaized/link-preview-js) of [link-preview-js](https://www.npmjs.com/package/link-preview-js) project under the hood.
 
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
@@ -37,6 +37,7 @@ If you really enjoy this project, please consider supporting its further develop
 ## Building
 - Verify that [npm](https://nodejs.org/en/download/prebuilt-installer) is installed and configured on your system
 - Open terminal in the project's root directory
+- Run `git submodule init && git submodule update` to install submodule
 - Run `npm install` to install all it's dependencies
 - Run `npm run build` to generate `dist` folder with minimized code of the extension
 

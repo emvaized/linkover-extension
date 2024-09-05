@@ -1,7 +1,7 @@
 {
     "name": "linkover-extension",
     "description": "Show general info about link on hover",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "homepage": "http://chrome.google.com/webstore",
     "author": "emvaized",
     "repository": {
@@ -19,9 +19,10 @@
     },
     "dependencies": {
         "copy-webpack-plugin": "^12.0.2",
-        "link-preview-js": "^3.0.5"
+        "link-preview-js": "./link-preview-js"
     },
     "scripts": {
-        "build": "webpack --config webpack.config.js"
+        "build": "webpack --config webpack.config.js",
+        "postinstall": "cd ./node_modules/link-preview-js && npm install && npm run build"
     }
 }
