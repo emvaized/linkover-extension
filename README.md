@@ -11,11 +11,11 @@ It can load page titles, favicons, short description and thumbnails for many lin
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
 
-<div align="center">
+<!-- <div align="center"> -->
     
-<a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a>
+> <a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a>
 
-</div>
+<!-- </div> -->
 
 ## Screenshots
 | ![Screenshot 1](./screenshots/2.png) |
