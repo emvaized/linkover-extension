@@ -1,4 +1,4 @@
-.link-tooltip {
+.linkover-tooltip {
     position: fixed !important;
     background-color: white !important;
     color: black !important;
@@ -16,31 +16,31 @@
     transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease;
 }
 
-.link-tooltip.opaque{
+.linkover-tooltip.opaque{
     opacity: 1 !important;
 }
 
-.link-tooltip.initial-tooltip {
+.linkover-tooltip.initial-tooltip {
     transform: translate(-50%, -70%) !important;
     /* transform: translate(-50%, -25%) scale(0) !important; */
 }
 
-.link-tooltip.revealed-tooltip {
+.linkover-tooltip.revealed-tooltip {
     transform: translate(-50%, -100%) !important;
     /* transform: translate(-50%, -100%) scale(1) !important; */
 }
 
-.link-tooltip.initial-tooltip-bottom {
+.linkover-tooltip.initial-tooltip-bottom {
     transform: translate(-50%, -25%) !important;
     /* transform: translate(-50%, -75%) scale(0) !important; */
 }
 
-.link-tooltip.revealed-tooltip-bottom {
+.linkover-tooltip.revealed-tooltip-bottom {
     transform: translate(-50%, 0%) !important;
     /* transform: translate(-50%, 0%) scale(1) !important; */
 }
 
-.link-tooltip .tooltip-header {
+.linkover-tooltip .tooltip-header {
     padding: 4px !important;
     margin: 0px !important;
     line-height: normal !important;
@@ -48,7 +48,7 @@
 }
 
 /* Title */
-.link-tooltip .title {
+.linkover-tooltip .title {
     all: revert;
     font-size: 18px !important;
     margin: 0px 0px 6px !important;
@@ -63,7 +63,7 @@
 }
 
 /* URL line */
-.link-tooltip .page-favicon {
+.linkover-tooltip .page-favicon {
     all: revert;
     height: 14px !important;
     width: 14px !important;
@@ -72,7 +72,7 @@
     float: left !important;
 }
 
-.link-tooltip .url {
+.linkover-tooltip .url {
     all: revert;
     display: block !important;
     margin: 6px 0 2px !important;
@@ -86,21 +86,21 @@
     text-overflow: ellipsis !important;
 }
 
-.link-tooltip .url.description-below-url {
+.linkover-tooltip .url.description-below-url {
     margin: 0 0 6px !important;
 }
 
-.link-tooltip .url .domain {
+.linkover-tooltip .url .domain {
     color: #2889d4;
 }
 
-.link-tooltip .url .sub-url {
+.linkover-tooltip .url .sub-url {
     color: black;
     opacity: 0.5 !important;
 }
 
 /* Description */
-.link-tooltip .description {
+.linkover-tooltip .description {
     opacity: 0.5 !important;
     font-size: 12px !important;
     -webkit-line-clamp: 4;
@@ -113,7 +113,7 @@
 }
 
 /* Thumbnail */
-.link-tooltip .thumbnail {
+.linkover-tooltip .thumbnail {
     all: revert;
     /* width: 100% !important; */
     object-fit: contain !important;
@@ -126,11 +126,11 @@
     border: 1px solid lightgray !important;
 }
 
-.link-tooltip .stretched-thumbnail {
+.linkover-tooltip .stretched-thumbnail {
     object-fit: cover !important;
 }
 
-.link-tooltip .top-thumbnail {
+.linkover-tooltip .top-thumbnail {
     /* border-bottom: 1px solid lightgray; */
     /* border-top-left-radius: 4px !important;
     border-top-right-radius: 4px !important; */
@@ -138,7 +138,7 @@
     border-radius: 4px !important;
 }
 
-.link-tooltip .bottom-thumbnail {
+.linkover-tooltip .bottom-thumbnail {
     /* border-top: 1px solid lightgray; */
     /* border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important; */
@@ -148,14 +148,14 @@
     border-radius: 4px !important;
 }
 
-.link-tooltip.thumbnail-on-side {
+.linkover-tooltip.thumbnail-on-side {
     display: flex !important;
     max-width: 400px !important;
     min-width: 400px !important;
     flex-direction: row !important;
 }
 
-.link-tooltip.thumbnail-on-side .thumbnail {
+.linkover-tooltip.thumbnail-on-side .thumbnail {
     border-radius: 4px !important;
     margin-right: 8px !important;
     min-width: 120px !important;
@@ -166,12 +166,12 @@
     padding: 0 !important;
 }
 
-.link-tooltip img {
+.linkover-tooltip img {
     filter: none !important;
     opacity: 0 !important;
     transition: opacity 150ms ease !important;
 }
-.link-tooltip img.opaque{
+.linkover-tooltip img.opaque{
     opacity: 1 !important;
 }
 
@@ -188,10 +188,10 @@
 }
 
 /* Highlight processing link */
-.link-tooltip-processing {
+.linkover-link-processing {
     position: relative;
 }
-.link-tooltip-processing:before {
+.linkover-link-processing:before {
     content: " ";
     z-index: 98989898989;
     display: block;
@@ -207,7 +207,7 @@
 }
 
 /* Popup arrow */
-.tooltip-arrow {
+.linkover-tooltip .tooltip-arrow {
     content: "";
     position: absolute;
     z-index: 99999999999999 !important;
@@ -222,11 +222,11 @@
     border-radius: 0px 0px 2px 0 !important;
 }
 
-.arrow-on-top {
+.linkover-tooltip .tooltip-arrow.arrow-on-top {
     top: calc(100% - 6.5px) !important;
 }
 
-.arrow-on-bottom {
+.linkover-tooltip .tooltip-arrow.arrow-on-bottom {
     bottom: calc(100% - 6.5px) !important;
     transform: rotate(-135deg);
 }
@@ -234,66 +234,66 @@
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
-    .link-tooltip {
+    .linkover-tooltip {
         background-color: #2b2a33 !important;
         color: white !important;
         outline: 1px solid gray;
     }
     
-    .link-tooltip .tooltip-arrow {
+    .linkover-tooltip .tooltip-arrow {
         background-color: #2b2a33 !important;
         border-bottom: 1px solid gray;
         border-right: 1px solid gray;
     }
     
-    .link-tooltip .top-thumbnail {
+    .linkover-tooltip .top-thumbnail {
         border-bottom: 1px solid gray !important;
     }
     
-    .link-tooltip .bottom-thumbnail {
+    .linkover-tooltip .bottom-thumbnail {
         border-top: 1px solid gray !important;
     }
     
-    .link-tooltip .domain {
+    .linkover-tooltip .domain {
         color: #54a2dd !important;
     }
     
-    .link-tooltip .sub-url {
+    .linkover-tooltip .sub-url {
         color: white !important;
     }
 
-    .link-tooltip .thumbnail {
+    .linkover-tooltip .thumbnail {
         border: 1px solid gray !important;
     }
 }
 
-.link-tooltip.detached {
+.linkover-tooltip.detached {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3) !important;
 }
 
 
 /* Different tooltip appearances (not used yet) */
 /* Gradient */
-.link-tooltip.add-gradient {
+.linkover-tooltip.add-gradient {
     background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
     /* box-shadow:  12px 12px 24px #b0b0b0,
         -12px -12px 24px #ffffff !important;  */
     /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3) !important; */
     
 }
-.link-tooltip.add-gradient .tooltip-arrow{
+.linkover-tooltip.add-gradient .tooltip-arrow{
     background: #efefef !important;
     /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important; */
 }
-.link-tooltip.add-gradient .tooltip-arrow.arrow-on-bottom{
+.linkover-tooltip.add-gradient .tooltip-arrow.arrow-on-bottom{
     background: #f7f7f7 !important;
 }
 /* Background blur */
-.link-tooltip.add-blur {
+.linkover-tooltip.add-blur {
     background-color: rgba(256,256,256,0.65) !important;
     backdrop-filter: blur(20px) !important;
 }
-.link-tooltip.add-blur::before {
+.linkover-tooltip.add-blur::before {
     /* background-image: url(./assets/noise_acrylic.png) !important; */
     position:absolute;
     top:0;
