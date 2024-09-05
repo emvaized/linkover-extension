@@ -40,7 +40,7 @@ function setCssVariables(){
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
-    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
+    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'blur', 'keyup']
         .forEach(e => document.addEventListener(e, function(){
             window.clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = window.setTimeout(function(){
@@ -89,6 +89,7 @@ function setPageListeners() {
                  if (configs.changeColorForProccessedLinks)
                     highlightProccessedLink(el)
 
+                clearTimeout(timeoutToShowPopup);
                 timeoutToShowPopup = setTimeout(function () {
                     if (!lastHoveredLink) return;
     
@@ -113,7 +114,7 @@ function setPageListeners() {
                         chrome.runtime.sendMessage({ 
                             actionToDo: 'fetchLinkInfo', url: hoveredUrl, followRedirects: configs.followRedirects 
                         }, (response) => {
-                            if (!lastHoveredLink) return;
+                            if (!lastHoveredLink || lastHoveredLink !== el) return;
                             if (configs.changeCursorToLoading) disableLoadingCursor(el)
 
                             if (!response) {
