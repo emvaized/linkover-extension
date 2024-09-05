@@ -10,7 +10,7 @@
 </div>
 
 This browser extension shows info about any link on mouse hover.
-It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses [my fork](https://github.com/emvaized/link-preview-js) of [link-preview-js](https://www.npmjs.com/package/link-preview-js) project under the hood.
+It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses my [fork](https://github.com/emvaized/link-preview-js) of [link-preview-js](https://www.npmjs.com/package/link-preview-js) project under the hood.
 
 > [!WARNING]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
@@ -26,7 +26,7 @@ It can load page titles, favicons, short description and thumbnails for many lin
 |-|
 
 <details>
-    <summary>More screenshots...</summary>
+    <summary>More screenshots</summary>
         <table><tr><td><img src="./screenshots/1.png" /></td></tr></table> 
         <table><tr><td><img src="./screenshots/3.png" /></td></tr></table> 
         <!-- <table><tr><td><img src="./screenshots/4.png" /></td></tr></table>  -->
@@ -39,9 +39,9 @@ If you really enjoy this project, please consider supporting its further develop
 <a href="https://ko-fi.com/emvaized"><img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/64f1a9ddd0246590df69ea0b_kofi_long_button_red%25402x-p-800.png" alt="Support on Ko-fi" height="40"></a> &nbsp; <a href="https://liberapay.com/emvaized/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg" height="40"></a> &nbsp; <a href="https://emvaized.github.io/donate/bitcoin/"><img src="https://github.com/emvaized/emvaized.github.io/blob/main/donate/bitcoin/assets/bitcoin-donate-button.png?raw=true" alt="Donate Bitcoin" height="40" /></a>
 
 ## Building
-- Open terminal and navigate to the project's root directory
+- Open terminal at project's root directory
 - Run `git submodule update --init` to install submodules from github
-- Run `npm install` to install all npm dependencies
+- Run `npm install` to install npm dependencies
 - Run `npm run build` to generate `dist` folder with minimized code of the extension
 
 ## Links to my other browser extensions
