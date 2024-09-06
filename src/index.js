@@ -236,7 +236,7 @@ function showTooltip(linkEl, data, dx) {
         url.appendChild(domain);
     
         const restOfurl = document.createElement('span');
-        restOfurl.innerText = fullUrl.replace(domainText, '');
+        restOfurl.innerText = decodeURI(fullUrl.replace(domainText, ''));
         restOfurl.className = 'sub-url';
         url.appendChild(restOfurl);
     }
