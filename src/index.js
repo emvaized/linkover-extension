@@ -91,7 +91,7 @@ function setPageListeners() {
 
                 clearTimeout(timeoutToShowPopup);
                 timeoutToShowPopup = setTimeout(function () {
-                    if (!lastHoveredLink) return;
+                    if (!lastHoveredLink || lastHoveredLink !== el) return;
     
                     if (configs.debugMode) console.log('trying to get info for ' + hoveredUrl);
 
