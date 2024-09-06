@@ -124,6 +124,7 @@
     padding: 0px !important;
     margin: 0px !important;
     border: 1px solid lightgray !important;
+    background: rgba(123,123,123,0.075) !important;
 }
 
 .linkover-tooltip .stretched-thumbnail {
