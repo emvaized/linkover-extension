@@ -84,7 +84,7 @@
         "message": "Mostrar sólo si el texto contiene tres puntos (...)"
     },
     "showOnlyWithModifierKey": {
-        "message": "Requiere tecla modificadora (Ctrl, Shift, Alt, etc.)"
+        "message": "Requiere tecla modificadora (Ctrl, Shift, Alt)"
     },
     "showSiteNameInsteadOfUrl": {
         "message": "Mostrar nombre del sitio en lugar de url"

@@ -84,7 +84,7 @@
         "message": "Show only if text contains three dots (...)"
     },
     "showOnlyWithModifierKey": {
-        "message": "Show only when modifier key is held (Ctrl, Shift, Alt etc)"
+        "message": "Show only when modifier key is held (Ctrl, Shift, Alt)"
     },
     "showSiteNameInsteadOfUrl": {
         "message": "Show site name instead of url"

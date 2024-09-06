@@ -39,7 +39,7 @@
         "message": "Черный список доменов"
     },
     "extensionSettingsHeader": {
-        "message": "Настройки перехода по ссылке"
+        "message": "Настройки Linkover"
     },
     "followRedirects": {
         "message": "Следовать перенаправлениям ссылок"
@@ -84,7 +84,7 @@
         "message": "Показывать, только если текст содержит три точки (...)"
     },
     "showOnlyWithModifierKey": {
-        "message": "Требуется клавиша-модификатор (Ctrl, Shift, Alt и т. д.)"
+        "message": "Требуется клавиша-модификатор (Ctrl, Shift, Alt)"
     },
     "showSiteNameInsteadOfUrl": {
         "message": "Показывать название сайта вместо url"
