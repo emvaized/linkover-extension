@@ -40,7 +40,7 @@ function setCssVariables(){
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
-    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'keyup']
+    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'blur', 'keyup']
         .forEach(e => document.addEventListener(e, function(){
             window.clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = window.setTimeout(function(){
@@ -89,8 +89,9 @@ function setPageListeners() {
                  if (configs.changeColorForProccessedLinks)
                     highlightProccessedLink(el)
 
+                clearTimeout(timeoutToShowPopup);
                 timeoutToShowPopup = setTimeout(function () {
-                    if (!lastHoveredLink) return;
+                    if (!lastHoveredLink || lastHoveredLink !== el) return;
     
                     if (configs.debugMode) console.log('trying to get info for ' + hoveredUrl);
 
@@ -113,7 +114,7 @@ function setPageListeners() {
                         chrome.runtime.sendMessage({ 
                             actionToDo: 'fetchLinkInfo', url: hoveredUrl, followRedirects: configs.followRedirects 
                         }, (response) => {
-                            if (!lastHoveredLink) return;
+                            if (!lastHoveredLink || lastHoveredLink !== el) return;
                             if (configs.changeCursorToLoading) disableLoadingCursor(el)
 
                             if (!response) {
@@ -156,7 +157,7 @@ function setPageListeners() {
 
 function showTooltip(linkEl, data, dx) {
     const tooltip = document.createElement('div');
-    tooltip.className = 'link-tooltip';
+    tooltip.className = 'linkover-tooltip';
 
     /// prepare reveal animation when position set over link
     const showTooltipOverLink = configs.tooltipPosition == 'overLink';
@@ -235,7 +236,7 @@ function showTooltip(linkEl, data, dx) {
         url.appendChild(domain);
     
         const restOfurl = document.createElement('span');
-        restOfurl.innerText = fullUrl.replace(domainText, '');
+        restOfurl.innerText = decodeURI(fullUrl.replace(domainText, ''));
         restOfurl.className = 'sub-url';
         url.appendChild(restOfurl);
     }
@@ -381,7 +382,7 @@ function onHideTooltip(el, keepShownOnMouseOut){
 }
 
 function hideTooltip() {
-    document.querySelectorAll('.link-tooltip').forEach(function (tooltip) {
+    document.querySelectorAll('.linkover-tooltip').forEach(function (tooltip) {
         tooltip.classList.remove('opaque');
 
         setTimeout(function () {
@@ -402,12 +403,12 @@ function disableLoadingCursor(el){
 
 function highlightProccessedLink(el){
     if (el && el.classList)
-        el.classList.add('link-tooltip-processing');
+        el.classList.add('linkover-link-processing');
 }
 
 function unhighlightProccessedLink(el){
     if (el && el.classList)
-        el.classList.remove('link-tooltip-processing');
+        el.classList.remove('linkover-link-processing');
 }
 
 function getUrlForFaviconFetch(domain){

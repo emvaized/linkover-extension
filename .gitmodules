@@ -1,0 +1,3 @@
+[submodule "link-preview-js"]
+	path = link-preview-js
+	url = https://github.com/emvaized/link-preview-js

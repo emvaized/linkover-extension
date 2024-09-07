@@ -35,17 +35,23 @@
     "descriptionBelowUrl": {
         "message": "Показать описание после домена"
     },
+    "donateButton": {
+        "message": "Поддержать проект"
+    },
     "excludedDomains": {
         "message": "Черный список доменов"
     },
     "extensionSettingsHeader": {
-        "message": "Настройки перехода по ссылке"
+        "message": "Настройки Linkover"
     },
     "followRedirects": {
         "message": "Следовать перенаправлениям ссылок"
     },
     "followRedirectsHint": {
         "message": "Если включить эту опцию, расширение будет следовать за любыми перенаправлениями ссылок и сможет достичь и проанализировать больше страниц, но это создает риск для безопасности и должно использоваться с осторожностью!"
+    },
+    "githubButton": {
+        "message": "Исходный код"
     },
     "hoverDelay": {
         "message": "Задержка при наведении (мс)"
@@ -84,7 +90,7 @@
         "message": "Показывать, только если текст содержит три точки (...)"
     },
     "showOnlyWithModifierKey": {
-        "message": "Требуется клавиша-модификатор (Ctrl, Shift, Alt и т. д.)"
+        "message": "Требуется клавиша-модификатор (Ctrl, Shift, Alt)"
     },
     "showSiteNameInsteadOfUrl": {
         "message": "Показывать название сайта вместо url"
@@ -112,5 +118,8 @@
     },
     "whitelistDomainsHint": {
         "message": "Если указан хотя бы один домен, расширение будет работать только на этом домене, игнорируя все остальные"
+    },
+    "writeAReviewButton": {
+        "message": "Написать отзыв"
     }
 }
