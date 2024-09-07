@@ -35,6 +35,9 @@
     "descriptionBelowUrl": {
         "message": "Mostrar descripción debajo del dominio"
     },
+    "donateButton": {
+        "message": "Proyecto de apoyo"
+    },
     "excludedDomains": {
         "message": "ListaNegraDominios"
     },
@@ -46,6 +49,9 @@
     },
     "followRedirectsHint": {
         "message": "Con esta opción activada, la extensión seguirá cualquier redirección de enlace y podría alcanzar y analizar más páginas, ¡pero impone riesgos de seguridad y debe usarse con precaución!"
+    },
+    "githubButton": {
+        "message": "Código fuente"
     },
     "hoverDelay": {
         "message": "Retraso al pasar el ratón (ms)"
@@ -112,5 +118,8 @@
     },
     "whitelistDomainsHint": {
         "message": "Cuando se especifica al menos un dominio, la extensión se ejecutará sólo en este dominio, ignorando todos los demás"
+    },
+    "writeAReviewButton": {
+        "message": "Escribe una reseña"
     }
 }

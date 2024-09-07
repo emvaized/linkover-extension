@@ -72,6 +72,17 @@ h5 {
     text-decoration: none; 
 }
 
+#footer-buttons{
+    padding: 6px;
+    margin-top: 10px;
+}
+#footer-buttons img {
+    vertical-align: bottom;
+}
+#footer-buttons button {
+    cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background: rgb(40,41,44);

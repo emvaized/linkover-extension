@@ -71,6 +71,7 @@ function init(){
         updateDisabledOptions();
         translateHeaders();
         setVersionLabel();
+        setFooterButtons();
     });
 }
 
@@ -95,4 +96,27 @@ function setVersionLabel() {
     const label = document.getElementById('extensionVersion');
     const manifestData = chrome.runtime.getManifest();
     label.innerHTML = 'v' + manifestData.version + ` (<a target='_blank' href='https://github.com/emvaized/linkover-extension/blob/main/CHANGELOG.md'>${(chrome.i18n.getMessage("changelog") ?? "Changelog").toLowerCase()}</a>)`;
+}
+
+function setFooterButtons(){
+    translateFooterButtons();
+
+    document.querySelector("#donateButton").addEventListener("click", function (val) {
+        window.open('https://github.com/emvaized/linkover-extension?tab=readme-ov-file#support', '_blank');
+    });
+    
+    document.querySelector("#githubButton").addEventListener("click", function (val) {
+        window.open('https://github.com/emvaized/linkover-extension', '_blank');
+    });
+    // document.querySelector("#writeAReviewButton").addEventListener("click", function (val) {
+    
+    //     const isFirefox = navigator.userAgent.indexOf("Firefox") > -1;
+    //     window.open(isFirefox ? 'https://addons.mozilla.org/firefox/addon/open-in-popup-window/' : 'https://chrome.google.com/webstore/detail/open-in-popup-window/gmnkpkmmkhbgnljljcchnakehlkihhie/reviews', '_blank');
+    // });
+}
+
+function translateFooterButtons(){
+    document.getElementById('donateButton').innerHTML += chrome.i18n.getMessage('donateButton');
+    document.getElementById('githubButton').innerHTML += chrome.i18n.getMessage('githubButton');
+    // document.getElementById('writeAReviewButton').innerHTML += chrome.i18n.getMessage('writeAReviewButton');
 }

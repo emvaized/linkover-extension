@@ -35,6 +35,9 @@
     "descriptionBelowUrl": {
         "message": "Show description below the domain"
     },
+    "donateButton": {
+        "message": "Support project"
+    },
     "excludedDomains": {
         "message": "Blacklist domains"
     },
@@ -46,6 +49,9 @@
     },
     "followRedirectsHint": {
         "message": "With this option enabled, extension will follow any link redirection and could reach and analyze more pages, but it imposes securiy risk and should be used with caution!"
+    },
+    "githubButton": {
+        "message": "Source code"
     },
     "hoverDelay": {
         "message": "Hover delay (ms)"
@@ -112,5 +118,8 @@
     },
     "whitelistDomainsHint": {
         "message": "When at least one domain is specified, extension will run only on this domain, ignoring all others"
+    },
+    "writeAReviewButton": {
+        "message": "Write a review"
     }
 }
