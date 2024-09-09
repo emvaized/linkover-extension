@@ -188,21 +188,31 @@ function showTooltip(linkEl, dx, hoveredUrl) {
         }
 
         thumbnail = document.createElement('img');
-        thumbnail.className = 'thumbnail top-thumbnail';
+        // thumbnail.className = 'thumbnail top-thumbnail';
         thumbnail.height = '150px';
-        thumbnail.classList.add('opaque');
-        tooltip.appendChild(thumbnail);
+        // thumbnail.classList.add('opaque');
+        // tooltip.appendChild(thumbnail);
+
+        const thumbnailWrapper = document.createElement('div');
+        thumbnailWrapper.className = 'thumbnail top-thumbnail';
+        thumbnailWrapper.appendChild(thumbnail);
+        thumbnailWrapper.style.position = 'relative';
+        thumbnailWrapper.classList.add('opaque');
+
+        thumbnailWrapper.appendChild(thumbnail);
+        tooltip.appendChild(thumbnailWrapper);
 
         thumbnail.addEventListener('load', function (ev) {
             if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
-                thumbnail.classList.add('stretched-thumbnail');
+                thumbnailWrapper.classList.add('stretched-thumbnail');
 
-            // thumbnail.classList.add('opaque');
-            thumbnail.classList.add('loaded');
+            thumbnail.classList.add('opaque');
+            // thumbnail.classList.add('loaded');
+            thumbnailWrapper.classList.add('loaded');
         });
 
         thumbnail.addEventListener('error', function () {
-            thumbnail.remove();
+            thumbnailWrapper.remove();
             if (configs.thumbnailOnSide) {
                 tooltip.classList.remove('thumbnail-on-side');
             }
@@ -322,8 +332,8 @@ function showTooltip(linkEl, dx, hoveredUrl) {
             arrow.classList.add('arrow-on-bottom');
     
             if (thumbnail && !configs.thumbnailOnSide) {
-                thumbnail.classList.remove('top-thumbnail');
-                thumbnail.classList.add('bottom-thumbnail');
+                thumbnailWrapper.classList.remove('top-thumbnail');
+                thumbnailWrapper.classList.add('bottom-thumbnail');
                 tooltip.appendChild(thumbnail);
             }
         }
@@ -387,14 +397,19 @@ function updateTooltip(data){
     /// title
     if (data.title && data.title[0] && data.title !== 'Blocked') {
         title.innerText = data.title.trim();
-        title.classList.add('loaded');
+        setTimeout(function(){
+            title.classList.add('loaded');
+        },1)
     } else title.classList.add('not-loaded')
 
     /// description
     if (configs.showDescription){
         if(data.description) {
             description.textContent = data.description.trim();
+        setTimeout(function(){
             description.classList.add('loaded');
+        },1)
+
         } else description.remove();
     } 
 
