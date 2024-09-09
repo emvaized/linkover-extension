@@ -16,7 +16,7 @@ const configs = {
     "showOnlyUrlWhenNoData": true,
     "showOnlyWhenThreeDots": false,
     "showOnlyWithModifierKey": true,
-    "showSiteNameInsteadOfUrl": true,
+    "showSiteNameInsteadOfUrl": false,
     "showThumbnail": true,
     "thumbnailOnSide": false,
     "tooltipPosition": "overLink", /// <- possible values: overLink, bottomLeft, bottomRight
