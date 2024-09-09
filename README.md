@@ -8,12 +8,12 @@
 This browser extension shows info about any link on mouse hover.
 It can load page titles, favicons, short description and thumbnails for many links you see over the internet and show it as a tooltip on hover. It currently uses my [fork](https://github.com/emvaized/link-preview-js) of [link-preview-js](https://www.npmjs.com/package/link-preview-js) project under the hood.
 
-> [!WARNING]\
+> [!NOTE]\
 > Fetching info about link using this extension will act as if actually visited the page! It is recommended to not prefetch suspicious links. Although browser history will not get populated with these pages, no worries.
 
 <!-- <div align="center"> -->
     
-<a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a>
+<a href="https://addons.mozilla.org/firefox/addon/linkover/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get for Firefox"></a> &nbsp; <a href="https://chromewebstore.google.com/detail/-–-info-tooltip-o/hnjipbfndeondflbdhomiiohbmkjobfc"><img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png" alt="Get for Chrome"></a>
 
 <!-- </div> -->
 
