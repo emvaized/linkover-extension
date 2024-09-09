@@ -339,7 +339,7 @@
     min-width: 200px !important;
     min-height: 60px !important;
 }
-.description:not(.loaded),.title:not(.loaded),.thumbnail:not(.loaded) {
+.description:not(.loaded),.title:not(.loaded),.thumbnail:not(.loaded),.page-favicon:not(.loaded) {
     background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
     background-size: 300%;
     background-position-x: 100%;
@@ -349,9 +349,10 @@
     /* transition: all 300ms ease; */
 }
 .page-favicon:not(.loaded) {
-    background-image: url(./assets/loading.gif);
+    /* background-image: url(./assets/loading.gif);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    border-radius: 50%;
 }
 .not-loaded{
     min-height: 0 !important; min-width: 0 !important;
