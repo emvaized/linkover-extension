@@ -166,7 +166,7 @@ function setPageListeners() {
 let thumbnail, header;
 let description, favicon;
 let domain, restOfurl;
-let title;
+let title, thumbnailWrapper;
 
 
 function showTooltip(linkEl, dx, hoveredUrl) {
@@ -193,7 +193,7 @@ function showTooltip(linkEl, dx, hoveredUrl) {
         // thumbnail.classList.add('opaque');
         // tooltip.appendChild(thumbnail);
 
-        const thumbnailWrapper = document.createElement('div');
+        thumbnailWrapper = document.createElement('div');
         thumbnailWrapper.className = 'thumbnail top-thumbnail';
         thumbnailWrapper.appendChild(thumbnail);
         thumbnailWrapper.style.position = 'relative';
@@ -254,11 +254,15 @@ function showTooltip(linkEl, dx, hoveredUrl) {
 
     /// add favicon
     favicon = document.createElement('img');
-    favicon.className = 'page-favicon';
+    // favicon.className = 'page-favicon';
     favicon.height = '16px';
     favicon.width = '16px';
-    favicon.classList.add('opaque');
-    url.prepend(favicon);
+    // favicon.classList.add('opaque');
+    // url.prepend(favicon);
+    const faviconWrapper = document.createElement('div');
+    faviconWrapper.className = 'page-favicon';
+    faviconWrapper.appendChild(favicon);
+    url.prepend(faviconWrapper);
 
     /// placeholder icon
     favicon.addEventListener('error', function () {
@@ -267,8 +271,8 @@ function showTooltip(linkEl, dx, hoveredUrl) {
     });
 
     favicon.addEventListener('load', function () {
-        // favicon.classList.add('opaque');
-        favicon.classList.add('loaded');
+        favicon.classList.add('opaque');
+        faviconWrapper.classList.add('loaded');
     });
    
     if (configs.descriptionBelowUrl) {
@@ -378,8 +382,6 @@ function showTooltip(linkEl, dx, hoveredUrl) {
 }
 
 function updateTooltip(data){
-    // return;
-
      /// favicon
      if (data.favicons && data.favicons[0]) {
         favicon.src = data.favicons[0];
@@ -390,9 +392,9 @@ function updateTooltip(data){
     if (configs.showThumbnail)
         if (data.images || (data.contentType && data.contentType.includes('image/'))){
             const srcUrl = data.images ? data.images[0] : data.url;
-            if (srcUrl == favicon.src) thumbnail.remove();
+            if (srcUrl == favicon.src) thumbnailWrapper.remove();
             thumbnail.src = srcUrl;
-        } else thumbnail.remove()
+        } else thumbnailWrapper.remove()
 
     /// title
     if (data.title && data.title[0] && data.title !== 'Blocked') {
@@ -400,16 +402,15 @@ function updateTooltip(data){
         setTimeout(function(){
             title.classList.add('loaded');
         },1)
-    } else title.classList.add('not-loaded')
+    } else title.remove();
 
     /// description
     if (configs.showDescription){
         if(data.description) {
             description.textContent = data.description.trim();
-        setTimeout(function(){
-            description.classList.add('loaded');
-        },1)
-
+            setTimeout(function(){
+                description.classList.add('loaded');
+            },1)
         } else description.remove();
     } 
 

@@ -43,5 +43,13 @@
         "gecko": {
           "id": "linkover@emvaized.dev"
         }
-    }
+    }, 
+     "web_accessible_resources": [
+        {
+          "resources": [
+            "assets/loading.gif"
+          ],
+          "matches": ["<all_urls>"]
+        }
+      ]
 }
