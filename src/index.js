@@ -338,7 +338,7 @@ function showTooltip(linkEl, dx, hoveredUrl) {
             if (thumbnail && !configs.thumbnailOnSide) {
                 thumbnailWrapper.classList.remove('top-thumbnail');
                 thumbnailWrapper.classList.add('bottom-thumbnail');
-                tooltip.appendChild(thumbnail);
+                tooltip.appendChild(thumbnailWrapper);
             }
         }
     
