@@ -319,7 +319,7 @@
 
 
 /* Shimmer animation */
-.linkover-tooltip .thumbnail, .linkover-tooltip .title, .linkover-tooltip .description, .linkover-tooltip .page-favicon{
+.linkover-tooltip .title, .linkover-tooltip .description, .linkover-tooltip .page-favicon{
     /* min-height: fit-content; min-width: fit-content; */
     background: transparent;
     transition: all 150ms ease !important;
