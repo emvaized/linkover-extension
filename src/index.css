@@ -13,7 +13,7 @@
     opacity: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease;
+    transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease !important;
 }
 
 .linkover-tooltip .thumbnail img {
