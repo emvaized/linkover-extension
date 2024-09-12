@@ -243,7 +243,8 @@ function showTooltip(linkEl, dx, hoveredUrl) {
 
     domain = document.createElement('span');
     domain.className = 'domain';
-    const domainText = fullUrl.split('/')[0];
+    let domainText = fullUrl.split('/')[0];
+    domainText = fullUrl.split('?')[0];
     domain.innerText = domainText;
     url.appendChild(domain);
 
