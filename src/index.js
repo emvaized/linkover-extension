@@ -203,11 +203,14 @@ function showTooltip(linkEl, dx, hoveredUrl) {
         tooltip.appendChild(thumbnailWrapper);
 
         thumbnail.addEventListener('load', function (ev) {
-            if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
-                thumbnailWrapper.classList.add('stretched-thumbnail');
+            if (configs.thumbnailOnSide){
+                if (thumbnail.naturalWidth > thumbnail.naturalHeight 
+                    && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
+                        thumbnailWrapper.classList.add('stretched-thumbnail');
+            }
+            
 
             thumbnail.classList.add('opaque');
-            // thumbnail.classList.add('loaded');
             thumbnailWrapper.classList.add('loaded');
         });
 
