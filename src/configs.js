@@ -20,7 +20,7 @@ const configs = {
     "showThumbnail": true,
     "thumbnailOnSide": false,
     "tooltipPosition": "overLink", /// <- possible values: overLink, bottomLeft, bottomRight
-    "transitionDuration": 250,
+    "transitionDuration": 300,
     "whitelistDomains": "",
     "windowsEventsDebounceTimeout": 30
 };

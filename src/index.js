@@ -55,7 +55,7 @@ function setPageListeners() {
     document.addEventListener('mouseover', function (e) {
         window.clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = window.setTimeout(function(){
-            if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
+            if ((!e.ctrlKey && !e.shiftKey && !e.altKey) && configs.showOnlyWithModifierKey) return;
             const el = e.target;
             if (el == prevHoveredEl) return;
             prevHoveredEl = el;
@@ -103,8 +103,8 @@ function setPageListeners() {
                     if (cachedData[hoveredUrl]) {
                         /// Grab previously cached reponse
                         hideTooltip();
-                        tooltipShown = true;
                         showTooltip(el, lastMouseMoveDx, hoveredUrl);
+                        tooltipShown = true;
                         updateTooltip(cachedData[hoveredUrl]);
                     } else {
                         /// Set loading cursor
@@ -161,13 +161,10 @@ function setPageListeners() {
 }
 
 
-
-
 let thumbnail, header;
 let description, favicon;
 let domain, restOfurl;
 let title, thumbnailWrapper;
-
 
 function showTooltip(linkEl, dx, hoveredUrl) {
     const tooltip = document.createElement('div');
@@ -209,7 +206,6 @@ function showTooltip(linkEl, dx, hoveredUrl) {
                         thumbnailWrapper.classList.add('stretched-thumbnail');
             }
             
-
             thumbnail.classList.add('opaque');
             thumbnailWrapper.classList.add('loaded');
         });
@@ -258,11 +254,8 @@ function showTooltip(linkEl, dx, hoveredUrl) {
 
     /// add favicon
     favicon = document.createElement('img');
-    // favicon.className = 'page-favicon';
     favicon.height = '16px';
     favicon.width = '16px';
-    // favicon.classList.add('opaque');
-    // url.prepend(favicon);
     const faviconWrapper = document.createElement('div');
     faviconWrapper.className = 'page-favicon';
     faviconWrapper.appendChild(favicon);
@@ -386,8 +379,8 @@ function showTooltip(linkEl, dx, hoveredUrl) {
 }
 
 function updateTooltip(data){
-     /// favicon
-     if (data.favicons && data.favicons[0]) {
+    /// favicon
+    if (data.favicons && data.favicons[0]) {
         favicon.src = data.favicons[0];
         favicon.classList.add('loaded');
     } else favicon.remove()
