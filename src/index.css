@@ -30,7 +30,7 @@
 
 .linkover-tooltip.initial-tooltip {
     /* transform: translate(-50%, -70%) !important; */
-    transform: translate(-50%, -100%) scale(1, 0.1) !important;
+    transform: translate(-50%, -90%) scale(1, 0.1) !important;
 }
 
 .linkover-tooltip.revealed-tooltip {
@@ -40,7 +40,7 @@
 
 .linkover-tooltip.initial-tooltip-bottom {
     /* transform: translate(-50%, -25%) !important; */
-    transform: translate(-50%, 0%) scale(1, 0.1) !important;
+    transform: translate(-50%, -10%) scale(1, 0.1) !important;
 }
 
 .linkover-tooltip.revealed-tooltip-bottom {
