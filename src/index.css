@@ -40,11 +40,13 @@
 
 .linkover-tooltip.initial-tooltip-bottom {
     /* transform: translate(-50%, -25%) !important; */
+    transform-origin: 50% 90% !important;
     transform: translate(-50%, -10%) scale(1, 0.1) !important;
 }
 
 .linkover-tooltip.revealed-tooltip-bottom {
     /* transform: translate(-50%, 0%) !important; */
+    transform-origin: 50% 90% !important;
     transform: translate(-50%, 0%) scale(1.0) !important;
 }
 
