@@ -13,8 +13,7 @@
     opacity: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    transition: transform var(--linkover-transition-duration) ease, opacity var(--linkover-transition-duration) ease !important;
-    
+    transition: transform var(--linkover-transition-duration, 300ms) ease, opacity var(--linkover-transition-duration, 300ms) ease !important;
     transform-origin: 50% 100% !important;
 }
 
