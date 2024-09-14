@@ -1,5 +1,5 @@
 {
-    "name": "Linkover – Info Tooltip on Hover for Links",
+    "name": "Linkover – preview links info on hover",
     "description": "__MSG_appDescription__",
     "version": "1.1",
     "author": "emvaized",
@@ -43,5 +43,13 @@
         "gecko": {
           "id": "linkover@emvaized.dev"
         }
-    }
+    }, 
+     "web_accessible_resources": [
+        {
+          "resources": [
+            "assets/loading.gif"
+          ],
+          "matches": ["<all_urls>"]
+        }
+      ]
 }

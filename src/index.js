@@ -55,7 +55,7 @@ function setPageListeners() {
     document.addEventListener('mouseover', function (e) {
         window.clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = window.setTimeout(function(){
-            if (configs.showOnlyWithModifierKey && (!e.ctrlKey && !e.shiftKey && !e.altKey)) return;
+            if ((!e.ctrlKey && !e.shiftKey && !e.altKey) && configs.showOnlyWithModifierKey) return;
             const el = e.target;
             if (el == prevHoveredEl) return;
             prevHoveredEl = el;
@@ -103,12 +103,17 @@ function setPageListeners() {
                     if (cachedData[hoveredUrl]) {
                         /// Grab previously cached reponse
                         hideTooltip();
+                        showTooltip(el, lastMouseMoveDx, hoveredUrl);
                         tooltipShown = true;
-                        showTooltip(el, cachedData[hoveredUrl], lastMouseMoveDx);
+                        updateTooltip(cachedData[hoveredUrl]);
                     } else {
                         /// Set loading cursor
-                        if (configs.changeCursorToLoading)
-                            setLoadingCursor(el)
+                        // if (configs.changeCursorToLoading)
+                        //     setLoadingCursor(el)
+
+                        hideTooltip();
+                        tooltipShown = true;
+                        showTooltip(el, lastMouseMoveDx, hoveredUrl);
     
                         /// Fetch response via JavaScript
                         chrome.runtime.sendMessage({ 
@@ -141,9 +146,9 @@ function setPageListeners() {
                             }
     
                             cachedData[hoveredUrl] = response;
-                            hideTooltip();
-                            tooltipShown = true;
-                            showTooltip(el, response, lastMouseMoveDx);
+                            
+                            // showTooltip(el, response, lastMouseMoveDx);
+                            updateTooltip(response);
                         });
                     }
                 }, configs.hoverDelay);
@@ -155,7 +160,13 @@ function setPageListeners() {
     }, false);
 }
 
-function showTooltip(linkEl, data, dx) {
+
+let thumbnail, header;
+let description, favicon;
+let domain, restOfurl;
+let title, thumbnailWrapper;
+
+function showTooltip(linkEl, dx, hoveredUrl) {
     const tooltip = document.createElement('div');
     tooltip.className = 'linkover-tooltip';
 
@@ -166,53 +177,53 @@ function showTooltip(linkEl, data, dx) {
     }
 
     /// thumbnail
-    let thumbnail;
     if (configs.showThumbnail) {
-        if (data.images || (data.contentType && data.contentType.includes('image/'))){
-            /// show tooltip on side
-            if (configs.thumbnailOnSide) {
-                tooltip.classList.add('thumbnail-on-side');
+
+        if (configs.thumbnailOnSide) 
+            tooltip.classList.add('thumbnail-on-side');
+
+        thumbnail = document.createElement('img');
+        thumbnail.height = '150px';
+
+        thumbnailWrapper = document.createElement('div');
+        thumbnailWrapper.className = 'thumbnail top-thumbnail';
+        thumbnailWrapper.appendChild(thumbnail);
+        thumbnailWrapper.classList.add('opaque');
+
+        thumbnailWrapper.appendChild(thumbnail);
+        tooltip.appendChild(thumbnailWrapper);
+
+        thumbnail.addEventListener('load', function (ev) {
+            if (configs.thumbnailOnSide){
+                if (thumbnail.naturalWidth > thumbnail.naturalHeight 
+                    && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
+                        thumbnailWrapper.classList.add('stretched-thumbnail');
             }
+            
+            thumbnail.classList.add('opaque');
+            thumbnailWrapper.classList.add('loaded');
+        });
 
-            thumbnail = document.createElement('img');
-            thumbnail.className = 'thumbnail top-thumbnail';
-            thumbnail.height = '150px';
-            thumbnail.src = data.images ? data.images[0] : data.url;
-            tooltip.appendChild(thumbnail);
-    
-            thumbnail.addEventListener('load', function (ev) {
-                if (thumbnail.naturalWidth > thumbnail.naturalHeight && thumbnail.naturalWidth / thumbnail.naturalHeight > 1.5)
-                    thumbnail.classList.add('stretched-thumbnail');
-
-                thumbnail.classList.add('opaque');
-            });
-    
-            thumbnail.addEventListener('error', function () {
-                thumbnail.remove();
-                if (configs.thumbnailOnSide) {
-                    tooltip.classList.remove('thumbnail-on-side');
-                }
-            });
-        }
+        thumbnail.addEventListener('error', function () {
+            thumbnailWrapper.remove();
+            if (configs.thumbnailOnSide) {
+                tooltip.classList.remove('thumbnail-on-side');
+            }
+        });
     }
 
     /// title
-    const header = document.createElement('div');
+    header = document.createElement('div');
     header.className = 'tooltip-header';
 
-    if (data.title && data.title[0] && data.title !== 'Blocked') {
-        const title = document.createElement('p');
-        title.className = 'title limited-lines-text';
-        title.innerText = data.title.trim();
-        header.appendChild(title);
-    }
+    title = document.createElement('p');
+    title.className = 'title limited-lines-text';
+    header.appendChild(title);
 
     /// add description
-    let description;
-    if (configs.showDescription && data.description) {
+    if (configs.showDescription) {
         description = document.createElement('p');
         description.className = 'description limited-lines-text';
-        description.textContent = data.description.trim();
         header.appendChild(description);
     }
 
@@ -220,46 +231,40 @@ function showTooltip(linkEl, data, dx) {
     const url = document.createElement('p');
     url.className = 'url limited-lines-text';
 
-    let fullUrl = data.url.replace('https://', '').replace('http://', '');
+    let fullUrl = hoveredUrl.replace('https://', '').replace('http://', '');
     if (fullUrl.slice(-1) == '/') fullUrl = fullUrl.slice(0, -1);
 
-    if (configs.showSiteNameInsteadOfUrl && data.siteName && data.siteName !== data.title) {
-        const domain = document.createElement('span');
-        domain.className = 'domain';
-        domain.innerText = data.siteName;
-        url.appendChild(domain);
-    } else {
-        const domain = document.createElement('span');
-        domain.className = 'domain';
-        const domainText = fullUrl.split('/')[0];
-        domain.innerText = domainText;
-        url.appendChild(domain);
-    
-        const restOfurl = document.createElement('span');
-        restOfurl.innerText = decodeURI(fullUrl.replace(domainText, ''));
-        restOfurl.className = 'sub-url';
-        url.appendChild(restOfurl);
-    }
+    domain = document.createElement('span');
+    domain.className = 'domain';
+    let domainText = fullUrl.split('/')[0];
+    domainText = domainText.split('?')[0];
+    domain.innerText = domainText;
+    url.appendChild(domain);
+
+    restOfurl = document.createElement('span');
+    restOfurl.innerText = decodeURI(fullUrl.replace(domainText, ''));
+    restOfurl.className = 'sub-url';
+    url.appendChild(restOfurl);
 
     /// add favicon
-    if (data.favicons && data.favicons[0]) {
-        const favicon = document.createElement('img');
-        favicon.className = 'page-favicon';
-        favicon.height = '16px';
-        favicon.width = '16px';
-        favicon.src = data.favicons[0];
-        url.prepend(favicon);
+    favicon = document.createElement('img');
+    favicon.height = '16px';
+    favicon.width = '16px';
+    const faviconWrapper = document.createElement('div');
+    faviconWrapper.className = 'page-favicon';
+    faviconWrapper.appendChild(favicon);
+    url.prepend(faviconWrapper);
 
-        /// placeholder icon
-        favicon.addEventListener('error', function () {
-            // favicon.src = 'link.svg';
-            favicon.src = getUrlForFaviconFetch(data.url.split('/')[2]);
-        });
+    /// placeholder icon
+    favicon.addEventListener('error', function () {
+        // favicon.src = 'link.svg';
+        favicon.src = getUrlForFaviconFetch(domainText);
+    });
 
-        favicon.addEventListener('load', function () {
-            favicon.classList.add('opaque');
-        });
-    }
+    favicon.addEventListener('load', function () {
+        favicon.classList.add('opaque');
+        faviconWrapper.classList.add('loaded');
+    });
    
     if (configs.descriptionBelowUrl) {
         url.classList.add("description-below-url");
@@ -322,9 +327,9 @@ function showTooltip(linkEl, data, dx) {
             arrow.classList.add('arrow-on-bottom');
     
             if (thumbnail && !configs.thumbnailOnSide) {
-                thumbnail.classList.remove('top-thumbnail');
-                thumbnail.classList.add('bottom-thumbnail');
-                tooltip.appendChild(thumbnail);
+                thumbnailWrapper.classList.remove('top-thumbnail');
+                thumbnailWrapper.classList.add('bottom-thumbnail');
+                tooltip.appendChild(thumbnailWrapper);
             }
         }
     
@@ -365,6 +370,45 @@ function showTooltip(linkEl, data, dx) {
         }
     }, 1);
     return tooltip;
+}
+
+function updateTooltip(data){
+    /// favicon
+    if (data.favicons && data.favicons[0]) {
+        favicon.src = data.favicons[0];
+        favicon.classList.add('loaded');
+    } else favicon.remove()
+
+    /// thumbnail
+    if (configs.showThumbnail)
+        if (data.images || (data.contentType && data.contentType.includes('image/'))){
+            const srcUrl = data.images ? data.images[0] : data.url;
+            if (srcUrl == favicon.src) thumbnailWrapper.remove();
+            thumbnail.src = srcUrl;
+        } else thumbnailWrapper.remove()
+
+    /// title
+    if (data.title && data.title[0] && data.title !== 'Blocked') {
+        title.innerText = data.title.trim();
+        setTimeout(function(){
+            title.classList.add('loaded');
+        },1)
+    } else title.remove();
+
+    /// description
+    if (configs.showDescription){
+        if(data.description) {
+            description.textContent = data.description.trim();
+            setTimeout(function(){
+                description.classList.add('loaded');
+            },1)
+        } else description.remove();
+    } 
+
+    /// site name
+    if (configs.showSiteNameInsteadOfUrl && data.siteName && data.siteName !== data.title) {
+        domain.innerText = data.siteName + ' ';
+    }
 }
 
 function onHideTooltip(el, keepShownOnMouseOut){
