@@ -1,3 +1,11 @@
+### 1.2
+- Implemented shimmer animation on loading link info 🎉
+- Show-up animation was changed to "scale up" effect
+- Improved scripts for fetching link info
+- Improved extension stability and mouse detection
+- Fixed show-up animation not working on some pages
+- Changed default config values
+
 ### 1.1
 - Add support for Chromium-based browsers 🎉
 - Removed unused dependencies, thus reducing package size by 70%
