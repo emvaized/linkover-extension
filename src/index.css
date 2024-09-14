@@ -28,23 +28,19 @@
 }
 
 .linkover-tooltip.initial-tooltip {
-    /* transform: translate(-50%, -70%) !important; */
     transform: translate(-50%, -90%) scale(1, 0.1) !important;
 }
 
 .linkover-tooltip.revealed-tooltip {
-    /* transform: translate(-50%, -100%) !important; */
     transform: translate(-50%, -100%) scale(1.0) !important;
 }
 
 .linkover-tooltip.initial-tooltip-bottom {
-    /* transform: translate(-50%, -25%) !important; */
     transform-origin: 50% 90% !important;
     transform: translate(-50%, -10%) scale(1, 0.1) !important;
 }
 
 .linkover-tooltip.revealed-tooltip-bottom {
-    /* transform: translate(-50%, 0%) !important; */
     transform-origin: 50% 90% !important;
     transform: translate(-50%, 0%) scale(1.0) !important;
 }
@@ -54,9 +50,7 @@
     margin: 0px !important;
     line-height: normal !important;
     overflow: auto !important;
-
     transition: all 300ms ease !important;
-
 }
 
 /* Title */
@@ -123,7 +117,6 @@
     font-size: 12px !important;
     -webkit-line-clamp: 4;
     line-clamp: 4;
-    /* margin: 0px 0px 7px !important; */
     line-height: normal !important;
     font-family: Arial, Helvetica, sans-serif !important;
     width: 100% !important;
@@ -152,19 +145,10 @@
 }
 
 .linkover-tooltip .top-thumbnail {
-    /* border-bottom: 1px solid lightgray; */
-    /* border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important; */
-    /* padding-bottom: 2px !important; */
     border-radius: 4px !important;
 }
 
 .linkover-tooltip .bottom-thumbnail {
-    /* border-top: 1px solid lightgray; */
-    /* border-bottom-left-radius: 4px !important;
-    border-bottom-right-radius: 4px !important; */
-    /* margin-top: 2px !important; */
-    /* padding-top: 2px !important; */
     vertical-align: bottom !important;
     border-radius: 4px !important;
 }
@@ -290,10 +274,6 @@
 /* Gradient */
 .linkover-tooltip.add-gradient {
     background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
-    /* box-shadow:  12px 12px 24px #b0b0b0,
-        -12px -12px 24px #ffffff !important;  */
-    /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3) !important; */
-    
 }
 .linkover-tooltip.add-gradient .tooltip-arrow{
     background: #efefef !important;
@@ -321,7 +301,7 @@
 }
 
 
-/* Shimmer animation */
+/* For shimmer loading animation */
 .linkover-tooltip .title, .linkover-tooltip .description, .linkover-tooltip .page-favicon{
     /* min-height: fit-content; min-width: fit-content; */
     background: transparent;
@@ -360,7 +340,6 @@
     max-height: 0 !important; max-width: 0 !important;
 }
 
-
 .linkover-tooltip img {
     filter: none !important;
     opacity: 0 !important;
@@ -369,7 +348,6 @@
 .linkover-tooltip img.opaque{
     opacity: 1 !important;
 }
-
 
 @keyframes shimmer {
     to {

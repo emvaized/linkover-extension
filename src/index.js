@@ -179,16 +179,11 @@ function showTooltip(linkEl, dx, hoveredUrl) {
     /// thumbnail
     if (configs.showThumbnail) {
 
-        /// show tooltip on side
-        if (configs.thumbnailOnSide) {
+        if (configs.thumbnailOnSide) 
             tooltip.classList.add('thumbnail-on-side');
-        }
 
         thumbnail = document.createElement('img');
-        // thumbnail.className = 'thumbnail top-thumbnail';
         thumbnail.height = '150px';
-        // thumbnail.classList.add('opaque');
-        // tooltip.appendChild(thumbnail);
 
         thumbnailWrapper = document.createElement('div');
         thumbnailWrapper.className = 'thumbnail top-thumbnail';
