@@ -17,12 +17,6 @@
     transform-origin: 50% 100% !important;
 }
 
-.linkover-tooltip .thumbnail img {
-    width: 100%; height: 100%; position: absolute;
-    opacity: 0 !important;
-    transition: opacity 150ms ease;
-}
-
 .linkover-tooltip.opaque{
     opacity: 1 !important;
 }
@@ -126,18 +120,24 @@
 /* Thumbnail */
 .linkover-tooltip .thumbnail {
     all: revert;
-    /* width: 100% !important; */
     max-width: 300px !important;
-    max-height: 150px !important;
+    max-height: 180px !important;
     min-height: 150px !important;
     overflow: hidden !important;
     padding: 0px !important;
     margin: 0px !important;
     border: 1px solid lightgray !important;
     background: rgba(123,123,123,0.075);
+    position: relative !important;
 }
-.linkover-tooltip .thumbnail img{
+
+.linkover-tooltip .thumbnail img {
     object-fit: contain !important;
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0 !important;
+    transition: opacity 150ms ease !important;
 }
 
 .linkover-tooltip .stretched-thumbnail img {

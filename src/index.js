@@ -188,7 +188,6 @@ function showTooltip(linkEl, dx, hoveredUrl) {
         thumbnailWrapper = document.createElement('div');
         thumbnailWrapper.className = 'thumbnail top-thumbnail';
         thumbnailWrapper.appendChild(thumbnail);
-        thumbnailWrapper.style.position = 'relative';
         thumbnailWrapper.classList.add('opaque');
 
         thumbnailWrapper.appendChild(thumbnail);
