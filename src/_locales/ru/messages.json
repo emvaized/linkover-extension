@@ -81,7 +81,7 @@
         "message": "Над ссылкой"
     },
     "popupTriggerMethod": {
-        "message": "Метод активации всплывающего окна"
+        "message": "Метод активации"
     },
     "preventTooltipFromCoverLink": {
         "message": "Предотвратить перекрытие ссылки всплывающей подсказкой"
