@@ -40,7 +40,7 @@ function setCssVariables(){
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
-    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'blur', 'keyup']
+    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'blur', 'keydown']
         .forEach(e => document.addEventListener(e, function(){
             window.clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = window.setTimeout(function(){
