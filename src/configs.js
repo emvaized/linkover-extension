@@ -19,10 +19,11 @@ const configs = {
     "showSiteNameInsteadOfUrl": false,
     "showThumbnail": true,
     "thumbnailOnSide": false,
-    "tooltipPosition": "overLink", /// <- possible values: overLink, bottomLeft, bottomRight
+    "tooltipPosition": "overLink", /// <- variants: overLink, bottomLeft, bottomRight
     "transitionDuration": 300,
     "whitelistDomains": "",
-    "windowsEventsDebounceTimeout": 30
+    "windowsEventsDebounceTimeout": 30,
+    "popupTriggerMethod": "onHover" /// <- variants: onHover, onLongClick
 };
 
 function loadUserConfigs(callback) {

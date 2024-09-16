@@ -71,8 +71,17 @@
     "mouseMoveDebounceTimeoutHint": {
         "message": "Less value brings more responsiveness to mouse movement, but increases CPU and battery load"
     },
+    "onHover": {
+        "message": "On hover"
+    },
+    "onLongClick": {
+        "message": "On long click"
+    },
     "overLink": {
         "message": "Over link"
+    },
+    "popupTriggerMethod": {
+        "message": "Popup activation method"
     },
     "preventTooltipFromCoverLink": {
         "message": "Prevent tooltip from covering the link"

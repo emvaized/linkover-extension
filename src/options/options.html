@@ -22,19 +22,28 @@
     <div class='option'>
         <label><input type="text" id="excludedDomains" placeholder="example.com,another.com"></input></label>
     </div>
-    
+
     <div class='option'>
-        <label><input type="checkbox" id="showOnlyWithModifierKey"></input></label>
+        <label>
+            <select id="popupTriggerMethod">
+                <option value="onHover">On hover</option>
+                <option value="onLongClick">On long click</option>
+            </select>
+        </label>
     </div>
     
     <div class='option'>
-        <label><input type="checkbox" id="showOnlyWhenThreeDots"></input></label>
+        <label><input type="checkbox" id="showOnlyWithModifierKey"></input></label>
     </div>
 
     <div class='option'>
         <label><input type="number" min="0" step="50" id="hoverDelay"></input></label>
     </div>
     
+    <div class='option'>
+        <label><input type="checkbox" id="showOnlyWhenThreeDots"></input></label>
+    </div>
+
     <hr />
     <h5 id="appearanceHeader">Appearance</h5>
     <div class='option'>
@@ -74,7 +83,7 @@
                 <option value="topRight">Top right</option>
             </select>
         </label>
-    </div>
+    </div>    
     
     <div class='option'>
         <label><input type="checkbox" id="changeColorForProccessedLinks"></input></label>
