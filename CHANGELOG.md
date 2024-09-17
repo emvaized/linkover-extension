@@ -1,3 +1,8 @@
+### 1.2.5
+- Added activation method option by long left click
+- Hide tooltip on keydown instead of keyup
+- Improved tooltip styles and loading animation
+
 ### 1.2
 - Implemented shimmer animation on loading link info 🎉
 - Show-up animation was changed to "scale up" effect

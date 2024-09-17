@@ -358,9 +358,9 @@
     }
 
     .linkover-tooltip .description:not(.loaded),
-.linkover-tooltip .title:not(.loaded),
-.linkover-tooltip .thumbnail:not(.loaded),
-.linkover-tooltip .page-favicon:not(.loaded) {
-    opacity: 0.5;
-}
+    .linkover-tooltip .title:not(.loaded),
+    .linkover-tooltip .thumbnail:not(.loaded),
+    .linkover-tooltip .page-favicon:not(.loaded) {
+        opacity: 0.5;
+    }
 }
