@@ -126,6 +126,7 @@
     overflow: hidden !important;
     padding: 0px !important;
     margin: 0px !important;
+    margin: 2px 2px 0px !important;
     border: 1px solid lightgray !important;
     background: rgba(123,123,123,0.075);
     position: relative !important;
@@ -168,6 +169,7 @@
     border: none;
     min-height: unset !important;
     padding: 0 !important;
+    margin: 0px !important;
 }
 .linkover-tooltip.thumbnail-on-side .thumbnail img {
     object-fit: cover !important;
@@ -227,42 +229,6 @@
 .linkover-tooltip .tooltip-arrow.arrow-on-bottom {
     bottom: calc(100% - 6.5px) !important;
     transform: rotate(-135deg);
-}
-
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-    .linkover-tooltip {
-        background-color: #2b2a33 !important;
-        color: white !important;
-        outline: 1px solid gray;
-    }
-    
-    .linkover-tooltip .tooltip-arrow {
-        background-color: #2b2a33 !important;
-        border-bottom: 1px solid gray;
-        border-right: 1px solid gray;
-    }
-    
-    .linkover-tooltip .top-thumbnail {
-        border-bottom: 1px solid gray !important;
-    }
-    
-    .linkover-tooltip .bottom-thumbnail {
-        border-top: 1px solid gray !important;
-    }
-    
-    .linkover-tooltip .domain {
-        color: #54a2dd !important;
-    }
-    
-    .linkover-tooltip .sub-url {
-        color: white !important;
-    }
-
-    .linkover-tooltip .thumbnail {
-        border: 1px solid gray !important;
-    }
 }
 
 .linkover-tooltip.detached {
@@ -331,9 +297,11 @@
     background-position-x: 100%;
     animation: shimmer 1s infinite linear;
     border-radius: 2px;
+    opacity: 0.75;
 }
 .linkover-tooltip .page-favicon:not(.loaded) {
     border-radius: 50%;
+    border: 1px solid lightgray !important;
 }
 .linkover-tooltip .not-loaded{
     min-height: 0 !important; min-width: 0 !important;
@@ -354,3 +322,45 @@
        background-position-x: 0%
     }
  }
+
+ /* Dark theme */
+@media (prefers-color-scheme: dark) {
+    .linkover-tooltip {
+        background-color: #2b2a33 !important;
+        color: white !important;
+        outline: 1px solid gray;
+    }
+    
+    .linkover-tooltip .tooltip-arrow {
+        background-color: #2b2a33 !important;
+        border-bottom: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+    
+    .linkover-tooltip .top-thumbnail {
+        border-bottom: 1px solid gray !important;
+    }
+    
+    .linkover-tooltip .bottom-thumbnail {
+        border-top: 1px solid gray !important;
+    }
+    
+    .linkover-tooltip .domain {
+        color: #54a2dd !important;
+    }
+    
+    .linkover-tooltip .sub-url {
+        color: white !important;
+    }
+
+    .linkover-tooltip .thumbnail {
+        border: 1px solid gray !important;
+    }
+
+    .linkover-tooltip .description:not(.loaded),
+.linkover-tooltip .title:not(.loaded),
+.linkover-tooltip .thumbnail:not(.loaded),
+.linkover-tooltip .page-favicon:not(.loaded) {
+    opacity: 0.5;
+}
+}
