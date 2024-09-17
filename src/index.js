@@ -40,7 +40,7 @@ function setCssVariables(){
 
 function setPageListeners() {
     /// prevent unwanted tooltip appear
-    ['mousedown', 'scroll', 'selectstart', 'visibilitychange', 'blur', 'keyup']
+    ['mousedown', 'scroll', 'visibilitychange', 'blur', 'keydown']
         .forEach(e => document.addEventListener(e, function(){
             window.clearTimeout(timeoutDebounceWindowListeners);
             timeoutDebounceWindowListeners = window.setTimeout(function(){
@@ -48,17 +48,51 @@ function setPageListeners() {
             }, configs.windowsEventsDebounceTimeout)
         }));
 
-    /// set listener on mouse move
-    let prevHoveredEl; /// <- cache previously hovered element
+
+    ['mouseup', 'click', 'selectionstart']
+        .forEach(e => document.addEventListener(e, (e) => {
+            if (tooltipShown) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            window.clearTimeout(timeoutDebounceMousemove);
+            clearTimeout(timeoutToShowPopup);
+        }));
+
+    document.addEventListener('dragstart', e => {
+        window.clearTimeout(timeoutDebounceMousemove);
+        clearTimeout(timeoutToShowPopup);
+        hideTooltip();
+    })
+
+    /// set mouse listeners
+    if (configs.popupTriggerMethod == 'onLongClick')
+        document.addEventListener('mousedown', e => {
+            if (configs.popupTriggerMethod == 'onLongClick')
+                onTriggerHandler(e, 100);
+        } , false)
     
-    // document.addEventListener('mousemove', function (e) {
-    document.addEventListener('mouseover', function (e) {
+
+    let prevHoveredEl; /// <- cache previously hovered element
+
+    // document.addEventListener('mouseover', e => onTriggerHandler(e, configs.mouseMoveDebounceTimeout), false);
+    if (configs.popupTriggerMethod == 'onHover')
+        document.addEventListener('mouseover', e => {
+            if (configs.popupTriggerMethod == 'onHover') {
+                const el = e.target;
+                if (el == prevHoveredEl) return;
+                prevHoveredEl = el;
+        
+                onTriggerHandler(e, configs.mouseMoveDebounceTimeout);
+            } 
+        }, false);
+
+    /// on trigger callback (either mouse hover or long click)
+    function onTriggerHandler(e, timeout){
         window.clearTimeout(timeoutDebounceMousemove); 
         timeoutDebounceMousemove = window.setTimeout(function(){
             if ((!e.ctrlKey && !e.shiftKey && !e.altKey) && configs.showOnlyWithModifierKey) return;
             const el = e.target;
-            if (el == prevHoveredEl) return;
-            prevHoveredEl = el;
     
             if (el.tagName == 'A' || (el.parentNode && el.parentNode.tagName == 'A')) {
                 lastMouseMoveDx = e.clientX;
@@ -71,12 +105,12 @@ function setPageListeners() {
                 if (configs.showOnlyWhenThreeDots && !el.innerText.includes('...')) return;
     
                 /// reject if too big cursor speed
-                const cursorSpeed = (Math.abs(e.movementX) + Math.abs(e.movementY)) / 2;
-                if (configs.debugMode) console.log('cursor speed: ' + cursorSpeed);
-                if (cursorSpeed > configs.maxCursorSpeed) {
-                    if (configs.debugMode) console.log('cursor speed is too big, rejected');
-                    return;
-                } 
+                // const cursorSpeed = (Math.abs(e.movementX) + Math.abs(e.movementY)) / 2;
+                // if (configs.debugMode) console.log('cursor speed: ' + cursorSpeed);
+                // if (cursorSpeed > configs.maxCursorSpeed) {
+                //     if (configs.debugMode) console.log('cursor speed is too big, rejected');
+                //     return;
+                // } 
     
                 if (configs.debugMode) console.log('hovered link!');
     
@@ -85,15 +119,15 @@ function setPageListeners() {
                     && el.parentNode.textContent.trim() == el.textContent.trim())
                         return;
                
-                 /// add color for proccessed links
-                 if (configs.changeColorForProccessedLinks)
-                    highlightProccessedLink(el)
-
                 clearTimeout(timeoutToShowPopup);
                 timeoutToShowPopup = setTimeout(function () {
                     if (!lastHoveredLink || lastHoveredLink !== el) return;
     
                     if (configs.debugMode) console.log('trying to get info for ' + hoveredUrl);
+
+                    /// add color for proccessed links
+                    if (configs.changeColorForProccessedLinks)
+                        highlightProccessedLink(el)
 
                     /// check url
                     let hoveredUrl = el.getAttribute('href') || el.getAttribute('data-url') || (el.parentNode && (el.parentNode.getAttribute('href') || el.parentNode.getAttribute('data-url')));
@@ -156,8 +190,8 @@ function setPageListeners() {
                 if (configs.debugMode && lastHoveredLink) console.log('leaved link');
                 onHideTooltip(el, configs.keepShownOnMouseOut);
             }
-        }, configs.mouseMoveDebounceTimeout)
-    }, false);
+        }, timeout ?? configs.mouseMoveDebounceTimeout)
+    }
 }
 
 

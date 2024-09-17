@@ -71,8 +71,17 @@
     "mouseMoveDebounceTimeoutHint": {
         "message": "Un valor menor aporta más capacidad de respuesta al movimiento del ratón, pero aumenta la carga de la CPU y la batería"
     },
+    "onHover": {
+        "message": "Al pasar el cursor"
+    },
+    "onLongClick": {
+        "message": "Con una pulsación larga"
+    },
     "overLink": {
         "message": "Sobreenlace"
+    },
+    "popupTriggerMethod": {
+        "message": "Método de activación de la ventana emergente"
     },
     "preventTooltipFromCoverLink": {
         "message": "Evitar que el tooltip cubra el enlace"

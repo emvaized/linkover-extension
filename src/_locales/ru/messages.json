@@ -71,8 +71,17 @@
     "mouseMoveDebounceTimeoutHint": {
         "message": "Меньшее значение обеспечивает большую отзывчивость на движение мыши, но увеличивает нагрузку на процессор и батарею"
     },
+    "onHover": {
+        "message": "При наведении"
+    },
+    "onLongClick": {
+        "message": "Длительное нажатие"
+    },
     "overLink": {
         "message": "Над ссылкой"
+    },
+    "popupTriggerMethod": {
+        "message": "Метод активации"
     },
     "preventTooltipFromCoverLink": {
         "message": "Предотвратить перекрытие ссылки всплывающей подсказкой"
