@@ -48,8 +48,7 @@ function setPageListeners() {
             }, configs.windowsEventsDebounceTimeout)
         }));
 
-
-    ['mouseup', 'click', 'selectionstart']
+    ['mouseup', 'click', 'selectionchange']
         .forEach(e => document.addEventListener(e, (e) => {
             if (tooltipShown) {
                 e.preventDefault();
