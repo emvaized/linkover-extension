@@ -2,6 +2,7 @@
 > Shows info tooltip on hovering any link
 
 [![Mozilla Add-on Version](https://img.shields.io/amo/v/linkover?label=version&color=red)](https://addons.mozilla.org/firefox/addon/linkover/)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/hnjipbfndeondflbdhomiiohbmkjobfc?label=users&logo=googlechrome&logoColor=white&color=blue)](https://chrome.google.com/webstore/detail/selection-actions/pemdbnndbdpbelmfcddaihdihdfmnadi)
 [![Mozilla Add-on](https://img.shields.io/amo/users/linkover?color=%23FF6611&label=users&logo=Firefox)](https://addons.mozilla.org/firefox/addon/linkover/)
 [![Mozilla Add-on Stars](https://img.shields.io/amo/stars/linkover)](https://addons.mozilla.org/firefox/addon/linkover/)
 
