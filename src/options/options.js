@@ -108,15 +108,15 @@ function setFooterButtons(){
     document.querySelector("#githubButton").addEventListener("click", function (val) {
         window.open('https://github.com/emvaized/linkover-extension', '_blank');
     });
-    // document.querySelector("#writeAReviewButton").addEventListener("click", function (val) {
+    document.querySelector("#writeAReviewButton").addEventListener("click", function (val) {
     
-    //     const isFirefox = navigator.userAgent.indexOf("Firefox") > -1;
-    //     window.open(isFirefox ? 'https://addons.mozilla.org/firefox/addon/open-in-popup-window/' : 'https://chrome.google.com/webstore/detail/open-in-popup-window/gmnkpkmmkhbgnljljcchnakehlkihhie/reviews', '_blank');
-    // });
+        const isFirefox = navigator.userAgent.indexOf("Firefox") > -1;
+        window.open(isFirefox ? 'https://addons.mozilla.org/firefox/addon/linkover/' : 'https://chromewebstore.google.com/detail/-%E2%80%93-info-tooltip-o/hnjipbfndeondflbdhomiiohbmkjobfc', '_blank');
+    });
 }
 
 function translateFooterButtons(){
     document.getElementById('donateButton').innerHTML += chrome.i18n.getMessage('donateButton');
     document.getElementById('githubButton').innerHTML += chrome.i18n.getMessage('githubButton');
-    // document.getElementById('writeAReviewButton').innerHTML += chrome.i18n.getMessage('writeAReviewButton');
+    document.getElementById('writeAReviewButton').innerHTML += chrome.i18n.getMessage('writeAReviewButton');
 }
