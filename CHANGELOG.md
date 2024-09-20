@@ -1,3 +1,7 @@
+### 1.2.6
+- Added footer buttons to the options page
+- Fix tooltip show-up when selecting text in the link
+
 ### 1.2.5
 - Added activation method option by long left click
 - Hide tooltip on keydown instead of keyup
